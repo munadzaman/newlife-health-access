@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { TrendingUp, Shield, Globe, Target } from 'lucide-react';
+import { TrendingUp, Shield, Globe, Target, Heart } from 'lucide-react';
 
 const InvestorsSection = () => {
   const [formData, setFormData] = useState({
