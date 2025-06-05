@@ -24,7 +24,7 @@ const ClinicsSection = () => {
       description: 'Expanding our services to serve the capital city',
       link: '#mohammadpur',
       isActive: false,
-      backgroundImage: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      backgroundImage: 'https://images.unsplash.com/photo-1581594549595-35f6edc7b762?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
       name: 'Zokigonj Hospital',
@@ -33,7 +33,7 @@ const ClinicsSection = () => {
       description: 'Bringing quality healthcare to rural Sylhet',
       link: '#zokigonj',
       isActive: false,
-      backgroundImage: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      backgroundImage: 'https://images.unsplash.com/photo-1581594736797-438f1b2e9b68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
       name: 'Srimongol Hospital',
@@ -47,12 +47,13 @@ const ClinicsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50" id="clinics">
+    <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50" id="clinics">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Providing Leading Healthcare
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 mb-8">
             for the People of Bangladesh
           </p>
@@ -60,12 +61,12 @@ const ClinicsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {clinics.map((clinic, index) => (
-            <Card key={index} className={`hover:shadow-lg transition-shadow duration-300 overflow-hidden relative ${clinic.isActive ? 'border-green-200' : 'border-gray-200'}`}>
+            <Card key={index} className={`hover:shadow-xl transition-all duration-300 overflow-hidden relative ${clinic.isActive ? 'border-green-200' : 'border-gray-200'} shadow-lg`}>
               <div 
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${clinic.backgroundImage})` }}
               />
-              <div className={`absolute inset-0 ${clinic.isActive ? 'bg-gradient-to-br from-blue-600/80 to-green-600/80' : 'bg-gray-900/60'}`} />
+              <div className={`absolute inset-0 ${clinic.isActive ? 'bg-gradient-to-br from-blue-600/85 to-green-600/85' : 'bg-gray-900/70'}`} />
               
               <CardHeader className="relative z-10">
                 <CardTitle className="text-lg text-white">{clinic.name}</CardTitle>
@@ -76,7 +77,7 @@ const ClinicsSection = () => {
               </CardHeader>
               <CardContent className="relative z-10">
                 <div className="space-y-3">
-                  <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                  <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
                     clinic.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
                   }`}>
                     {clinic.status}
@@ -104,7 +105,7 @@ const ClinicsSection = () => {
                   <Button 
                     variant={clinic.isActive ? "default" : "outline"} 
                     size="sm" 
-                    className="w-full mt-4"
+                    className={`w-full mt-4 ${clinic.isActive ? 'bg-white text-blue-600 hover:bg-gray-100' : 'border-white text-white hover:bg-white hover:text-gray-900'}`}
                     disabled={!clinic.isActive}
                   >
                     {clinic.isActive ? (
