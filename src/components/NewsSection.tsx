@@ -45,12 +45,13 @@ const NewsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50" id="news">
+    <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50" id="news">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Latest News & Updates
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Stay informed about our latest achievements, partnerships, and community impact stories
           </p>
@@ -58,7 +59,7 @@ const NewsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {newsItems.map((news) => (
-            <Card key={news.id} className="hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+            <Card key={news.id} className="hover:shadow-xl transition-all duration-300 overflow-hidden bg-white border-0 shadow-lg">
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src={news.image} 
@@ -66,7 +67,7 @@ const NewsSection = () => {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-600 text-white px-2 py-1 rounded text-xs font-medium">
+                  <span className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                     {news.category}
                   </span>
                 </div>
@@ -93,7 +94,7 @@ const NewsSection = () => {
                   </div>
                 </div>
                 
-                <Button variant="outline" size="sm" className="w-full group">
+                <Button variant="outline" size="sm" className="w-full group border-blue-600 text-blue-600 hover:bg-blue-50">
                   Read More
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -103,7 +104,7 @@ const NewsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-3">
             View All News
           </Button>
         </div>

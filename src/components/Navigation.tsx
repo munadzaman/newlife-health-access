@@ -16,47 +16,28 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* First row with logo and search */}
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo Section */}
+          <div className="flex items-center space-x-4">
             <img 
               src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
               alt="Newlife Medical Services" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
-          </div>
-
-          {/* Search */}
-          <div className="hidden md:flex items-center">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              <Input 
-                placeholder="Search..." 
-                className="pl-10 w-64 border-gray-300 focus:border-blue-600 focus:ring-blue-600"
-              />
+            <div className="hidden md:block">
+              <h1 className="text-xl font-bold text-blue-600">Newlife Medical Services</h1>
+              <p className="text-sm text-gray-600">Making World Class Healthcare Accessible</p>
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            className="lg:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            <Menu className="h-6 w-6" />
-          </Button>
-        </div>
-
-        {/* Second row with navigation menu */}
-        <div className="hidden lg:flex items-center justify-between h-16 border-t border-gray-100">
-          <div className="flex items-center space-x-6">
-            <a href="#about" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <a href="#about" className="text-gray-800 hover:text-blue-600 transition-colors font-medium">
               About Us
             </a>
             
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
+              <DropdownMenuTrigger className="flex items-center text-gray-800 hover:text-blue-600 transition-colors font-medium">
                 Our Clinics <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white border border-gray-200 shadow-xl z-50 min-w-[250px]">
@@ -84,7 +65,7 @@ const Navigation = () => {
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
+              <DropdownMenuTrigger className="flex items-center text-gray-800 hover:text-blue-600 transition-colors font-medium">
                 Our Services <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white border border-gray-200 shadow-xl z-50 min-w-[280px]">
@@ -126,14 +107,8 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <a href="#social-enterprise" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
-              Social Enterprise
-            </a>
-          </div>
-
-          <div className="flex items-center space-x-6">
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
+              <DropdownMenuTrigger className="flex items-center text-gray-800 hover:text-blue-600 transition-colors font-medium">
                 Digital Services <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white border border-gray-200 shadow-xl z-50 min-w-[200px]">
@@ -152,19 +127,42 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <a href="#investors" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
+            <a href="#social-enterprise" className="text-gray-800 hover:text-blue-600 transition-colors font-medium">
+              Social Enterprise
+            </a>
+            <a href="#investors" className="text-gray-800 hover:text-blue-600 transition-colors font-medium">
               Investors
             </a>
-            <a href="#team" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
+            <a href="#team" className="text-gray-800 hover:text-blue-600 transition-colors font-medium">
               Our Team
             </a>
-            <a href="#news" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
+            <a href="#news" className="text-gray-800 hover:text-blue-600 transition-colors font-medium">
               News
             </a>
-            <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white font-medium px-6 py-2 rounded-lg transition-all">
+          </div>
+
+          {/* Right Section */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Input 
+                placeholder="Search..." 
+                className="pl-10 w-48 border-gray-300 focus:border-blue-600 focus:ring-blue-600"
+              />
+            </div>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-lg transition-all">
               Patient Portal
             </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            className="lg:hidden p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <Menu className="h-6 w-6" />
+          </Button>
         </div>
 
         {/* Mobile Menu */}
@@ -178,7 +176,7 @@ const Navigation = () => {
               <a href="#investors" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Investors</a>
               <a href="#team" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Our Team</a>
               <a href="#news" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">News</a>
-              <Button variant="outline" className="mx-3 my-2 text-blue-600 border-blue-600 w-full">
+              <Button className="mx-3 my-2 bg-blue-600 hover:bg-blue-700 text-white w-full">
                 Patient Portal
               </Button>
             </div>
