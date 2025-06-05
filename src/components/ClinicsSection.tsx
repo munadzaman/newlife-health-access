@@ -14,8 +14,7 @@ const ClinicsSection = () => {
       description: 'Our flagship clinic specializing in comprehensive eye care services',
       services: ['Eye Consultation', 'Cataract Surgery', 'Vision Therapy', 'Rural Outreach'],
       link: '#bishwanath',
-      isActive: true,
-      backgroundImage: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      isActive: true
     },
     {
       name: 'Mohammadpur Hospital',
@@ -23,8 +22,7 @@ const ClinicsSection = () => {
       status: 'Coming Soon',
       description: 'Expanding our services to serve the capital city',
       link: '#mohammadpur',
-      isActive: false,
-      backgroundImage: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      isActive: false
     },
     {
       name: 'Zokigonj Hospital',
@@ -32,8 +30,7 @@ const ClinicsSection = () => {
       status: 'Coming Soon',
       description: 'Bringing quality healthcare to rural Sylhet',
       link: '#zokigonj',
-      isActive: false,
-      backgroundImage: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      isActive: false
     },
     {
       name: 'Srimongol Hospital',
@@ -41,8 +38,7 @@ const ClinicsSection = () => {
       status: 'Coming Soon',
       description: 'Comprehensive healthcare in the tea garden region',
       link: '#srimongol',
-      isActive: false,
-      backgroundImage: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      isActive: false
     }
   ];
 
@@ -60,21 +56,15 @@ const ClinicsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {clinics.map((clinic, index) => (
-            <Card key={index} className={`hover:shadow-lg transition-shadow duration-300 overflow-hidden relative ${clinic.isActive ? 'border-green-200' : 'border-gray-200'}`}>
-              <div 
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${clinic.backgroundImage})` }}
-              />
-              <div className={`absolute inset-0 ${clinic.isActive ? 'bg-gradient-to-br from-blue-600/80 to-green-600/80' : 'bg-gray-900/60'}`} />
-              
-              <CardHeader className="relative z-10">
-                <CardTitle className="text-lg text-white">{clinic.name}</CardTitle>
-                <CardDescription className="flex items-center text-gray-200">
+            <Card key={index} className={`hover:shadow-lg transition-shadow duration-300 ${clinic.isActive ? 'border-green-200' : 'border-gray-200'}`}>
+              <CardHeader>
+                <CardTitle className="text-lg text-blue-800">{clinic.name}</CardTitle>
+                <CardDescription className="flex items-center text-gray-600">
                   <MapPin className="h-4 w-4 mr-1" />
                   {clinic.location}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="relative z-10">
+              <CardContent>
                 <div className="space-y-3">
                   <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
                     clinic.isActive ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
@@ -83,18 +73,18 @@ const ClinicsSection = () => {
                   </div>
                   
                   {clinic.hours && (
-                    <div className="flex items-center text-sm text-gray-200">
+                    <div className="flex items-center text-sm text-gray-600">
                       <Clock className="h-4 w-4 mr-1" />
                       {clinic.hours}
                     </div>
                   )}
                   
-                  <p className="text-sm text-gray-200">{clinic.description}</p>
+                  <p className="text-sm text-gray-600">{clinic.description}</p>
                   
                   {clinic.services && (
                     <div className="flex flex-wrap gap-1">
                       {clinic.services.map((service, idx) => (
-                        <span key={idx} className="text-xs bg-white bg-opacity-20 text-white px-2 py-1 rounded">
+                        <span key={idx} className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
                           {service}
                         </span>
                       ))}
