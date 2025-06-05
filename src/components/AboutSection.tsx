@@ -28,17 +28,13 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50" id="about">
+    <section className="py-16 bg-gray-50" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            About Us
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto mb-6"></div>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              About Newlife Medical Services
+            </h2>
             <div className="space-y-4 text-gray-600">
               <p>
                 The Newlife Medical Services is a project initiated by a group of UK based professionals 
@@ -64,9 +60,9 @@ const AboutSection = () => {
             {values.map((value, index) => {
               const IconComponent = value.icon;
               return (
-                <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
+                <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-6 w-6 text-blue-600" />
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">{value.title}</h3>
