@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import { Calendar, Clock, ArrowRight, Eye } from 'lucide-react';
 
 const NewsSection = () => {
@@ -12,7 +13,8 @@ const NewsSection = () => {
       date: "2024-01-15",
       readTime: "3 min read",
       category: "Equipment",
-      author: "Dr. Sarah Thompson"
+      author: "Dr. Sarah Thompson",
+      thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       id: 2,
@@ -21,7 +23,8 @@ const NewsSection = () => {
       date: "2024-01-10",
       readTime: "4 min read",
       category: "Community Outreach",
-      author: "Dr. Anwarul Abedin"
+      author: "Dr. Anwarul Abedin",
+      thumbnail: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       id: 3,
@@ -30,34 +33,8 @@ const NewsSection = () => {
       date: "2024-01-05",
       readTime: "2 min read",
       category: "Partnership",
-      author: "Hamid Hussain Azad"
-    },
-    {
-      id: 4,
-      title: "Vision Therapy Program Shows Remarkable Success in Children",
-      excerpt: "Our specialized vision therapy program has helped over 200 children with learning difficulties improve their academic performance through enhanced visual skills.",
-      date: "2023-12-28",
-      readTime: "5 min read",
-      category: "Research",
-      author: "Dr. Rashida Ahmed"
-    },
-    {
-      id: 5,
-      title: "New Mohammadpur Vision Center Construction Begins",
-      excerpt: "Construction has officially begun on our second location in Mohammadpur, Dhaka, which will expand our urban healthcare reach significantly.",
-      date: "2023-12-20",
-      readTime: "3 min read",
-      category: "Expansion",
-      author: "Mohammad Khan"
-    },
-    {
-      id: 6,
-      title: "International Medical Mission Brings UK Specialists to Bangladesh",
-      excerpt: "A team of UK-based ophthalmologists visited our Bishwanath facility to provide advanced training and conduct complex surgical procedures.",
-      date: "2023-12-15",
-      readTime: "4 min read",
-      category: "Training",
-      author: "Dr. Sarah Thompson"
+      author: "Hamid Hussain Azad",
+      thumbnail: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
 
@@ -77,46 +54,55 @@ const NewsSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-6">
             {newsItems.map((news) => (
-              <div key={news.id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <span className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">
-                        {news.category}
-                      </span>
-                      <div className="flex items-center text-sm text-gray-500 space-x-4">
-                        <div className="flex items-center space-x-1">
-                          <Calendar className="h-4 w-4" />
-                          <span>{new Date(news.date).toLocaleDateString()}</span>
+              <Card key={news.id} className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="flex flex-col md:flex-row">
+                    <div className="md:w-1/3">
+                      <img 
+                        src={news.thumbnail} 
+                        alt={news.title}
+                        className="w-full h-48 md:h-full object-cover"
+                      />
+                    </div>
+                    <div className="md:w-2/3 p-6">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <span className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                          {news.category}
+                        </span>
+                        <div className="flex items-center text-sm text-gray-500 space-x-4">
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="h-4 w-4" />
+                            <span>{new Date(news.date).toLocaleDateString()}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Clock className="h-4 w-4" />
+                            <span>{news.readTime}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Eye className="h-4 w-4" />
+                            <span>By {news.author}</span>
+                          </div>
                         </div>
-                        <div className="flex items-center space-x-1">
-                          <Clock className="h-4 w-4" />
-                          <span>{news.readTime}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <Eye className="h-4 w-4" />
-                          <span>By {news.author}</span>
-                        </div>
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight hover:text-blue-600 transition-colors cursor-pointer">
+                        {news.title}
+                      </h3>
+                      
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        {news.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center justify-between">
+                        <Button variant="outline" size="sm" className="group border-blue-600 text-blue-600 hover:bg-blue-50">
+                          Read Full Article
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
                       </div>
                     </div>
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight hover:text-blue-600 transition-colors cursor-pointer">
-                    {news.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {news.excerpt}
-                  </p>
-                  
-                  <div className="flex items-center justify-between">
-                    <Button variant="outline" size="sm" className="group border-blue-600 text-blue-600 hover:bg-blue-50">
-                      Read Full Article
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
 

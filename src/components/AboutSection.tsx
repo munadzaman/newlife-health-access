@@ -42,7 +42,7 @@ const AboutSection = () => {
             <img 
               src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               alt="Healthcare team providing services"
-              className="rounded-lg shadow-xl w-full h-96 object-cover"
+              className="rounded-lg shadow-xl w-full h-80 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-lg"></div>
           </div>
@@ -72,7 +72,7 @@ const AboutSection = () => {
               {values.map((value, index) => {
                 const IconComponent = value.icon;
                 return (
-                  <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
+                  <Card key={index} className="text-center p-6 hover:shadow-xl transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm shadow-lg">
                     <CardContent className="pt-6">
                       <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <IconComponent className="h-6 w-6 text-blue-600" />

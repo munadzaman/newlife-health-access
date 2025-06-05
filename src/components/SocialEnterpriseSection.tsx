@@ -84,72 +84,91 @@ const SocialEnterpriseSection = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Two-Sided Approach</h3>
               
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-full">
-                    <Building2 className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">World Class Healthcare</h4>
-                    <p className="text-gray-600">
-                      We provide world class facilities and infrastructure through competitive pricing that offers value for money, attracting investment through healthy returns.
-                    </p>
-                  </div>
-                </div>
+                <Card className="shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-blue-100 p-3 rounded-full">
+                        <Building2 className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-2">World Class Healthcare</h4>
+                        <p className="text-gray-600">
+                          We provide world class facilities and infrastructure through competitive pricing that offers value for money, attracting investment through healthy returns.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-green-100 p-3 rounded-full">
-                    <Heart className="h-6 w-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">Accessible for Everyone</h4>
-                    <p className="text-gray-600">
-                      We make services accessible through subsidization, sponsorship facilitation, and strategic placement at thana (sub-district) level for easy rural access.
-                    </p>
-                  </div>
-                </div>
+                <Card className="shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-green-100 p-3 rounded-full">
+                        <Heart className="h-6 w-6 text-green-600" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Accessible for Everyone</h4>
+                        <p className="text-gray-600">
+                          We make services accessible through subsidization, sponsorship facilitation, and strategic placement at thana (sub-district) level for easy rural access.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-purple-100 p-3 rounded-full">
-                    <Users className="h-6 w-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">Rural Outreach</h4>
-                    <p className="text-gray-600">
-                      We conduct rural camps to take services to patients' doorsteps and work with NGOs, charities, and government agencies.
-                    </p>
-                  </div>
-                </div>
+                <Card className="shadow-lg">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-purple-100 p-3 rounded-full">
+                        <Users className="h-6 w-6 text-purple-600" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-2">Rural Outreach</h4>
+                        <p className="text-gray-600">
+                          We conduct rural camps to take services to patients' doorsteps and work with NGOs, charities, and government agencies.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Current Partners</h3>
-              <p className="text-gray-600 mb-6">
-                We work with international and national NGO and governmental agency partners to deliver healthcare to rural Bangladesh.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="bg-gray-100 p-4 rounded-lg text-center">
-                  <p className="font-medium text-gray-800">GRT</p>
+            <Card className="shadow-xl">
+              <CardHeader className="bg-gradient-to-r from-blue-600 to-green-600 text-white">
+                <CardTitle className="text-xl font-bold">Partner With Us</CardTitle>
+              </CardHeader>
+              <CardContent className="p-8">
+                <p className="text-gray-600 mb-6">
+                  We work with international and national NGO and governmental agency partners to deliver healthcare to rural Bangladesh.
+                </p>
+                
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="bg-gray-100 p-4 rounded-lg text-center">
+                    <p className="font-medium text-gray-800">GRT</p>
+                  </div>
+                  <div className="bg-gray-100 p-4 rounded-lg text-center">
+                    <p className="font-medium text-gray-800">BHDI</p>
+                  </div>
                 </div>
-                <div className="bg-gray-100 p-4 rounded-lg text-center">
-                  <p className="font-medium text-gray-800">BHDI</p>
-                </div>
-              </div>
 
-              <div className="space-y-3">
-                <Button className="w-full bg-green-600 hover:bg-green-700">
-                  Sponsor Cataract Operations
-                </Button>
-                <Button variant="outline" className="w-full">
-                  Sponsor Medical Camps
-                </Button>
-              </div>
-            </div>
+                <div className="space-y-3">
+                  <Button className="w-full bg-green-600 hover:bg-green-700">
+                    Sponsor Cataract Operations
+                  </Button>
+                  <Button variant="outline" className="w-full">
+                    Sponsor Medical Camps
+                  </Button>
+                  <Button variant="outline" className="w-full">
+                    Contact Us for Partnership
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Camp Gallery Section */}
-          <Card className="shadow-xl mb-16">
+          <Card className="shadow-xl">
             <CardHeader className="text-center bg-gradient-to-r from-blue-600 to-green-600 text-white">
               <CardTitle className="text-3xl font-bold flex items-center justify-center">
                 <Eye className="mr-3 h-8 w-8" />
@@ -214,16 +233,6 @@ const SocialEnterpriseSection = () => {
               </div>
             </CardContent>
           </Card>
-
-          <div className="text-center bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Partner With Us</h3>
-            <p className="text-gray-600 mb-6">
-              If you are an NGO, charity, philanthropist, or government agency passionate about health and wellbeing of the poor and vulnerable in Bangladesh, let's work together.
-            </p>
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Contact Us for Partnership
-            </Button>
-          </div>
         </div>
       </section>
 

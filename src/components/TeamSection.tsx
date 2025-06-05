@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Linkedin, Mail } from 'lucide-react';
@@ -69,13 +70,13 @@ const TeamSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
-            <Card key={index} className="hover:shadow-lg transition-all duration-300 bg-white border-0 shadow-md">
+            <Card key={index} className="hover:shadow-xl transition-all duration-300 bg-white border-0 shadow-lg">
               <CardHeader className="text-center pb-4">
                 <div className="mx-auto mb-4">
                   <img 
                     src={member.image} 
                     alt={member.name}
-                    className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-gray-100"
+                    className="w-40 h-40 rounded-full object-cover mx-auto border-4 border-gray-100"
                   />
                 </div>
                 <CardTitle className="text-xl text-gray-900">{member.name}</CardTitle>

@@ -1,136 +1,119 @@
-import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+
+import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Calendar, Award, MapPin } from 'lucide-react';
+import { Star, Calendar, Award, MapPin } from 'lucide-react';
 
 const DoctorsSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   const doctors = [
     {
-      id: 1,
-      name: "Dr. Sarah Ahmed",
-      specialty: "Ophthalmologist & Retinal Specialist",
-      qualifications: "MBBS, MD (Ophthalmology), Fellowship in Retina",
-      experience: "15 years",
-      achievements: ["Pioneer in Diabetic Retinopathy Treatment", "500+ Successful Retinal Surgeries"],
-      department: "Retina & Vitreous",
-      consultationDays: "Mon, Wed, Fri",
-      consultationTime: "9:00 AM - 2:00 PM",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      available: true
+      name: "Dr. Sarah Thompson",
+      specialty: "Senior Ophthalmologist",
+      qualifications: "MBBS, MD (Ophthalmology), FRCS",
+      experience: "15+ years",
+      rating: 4.9,
+      reviews: 156,
+      location: "Bishwanath Eye Hospital",
+      image: "https://images.unsplash.com/photo-1594824883303-384472988da9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      specializations: ["Cataract Surgery", "Glaucoma Treatment", "Diabetic Retinopathy", "LASIK Surgery"],
+      languages: ["English", "Bengali", "Hindi"],
+      availability: "Mon-Sat: 9AM-5PM"
     },
     {
-      id: 2,
       name: "Dr. Mohammad Rahman",
-      specialty: "Cataract & Anterior Segment Surgeon",
-      qualifications: "MBBS, MS (Ophthalmology), FICO",
-      experience: "12 years",
-      achievements: ["3000+ Cataract Surgeries", "Expert in Phacoemulsification"],
-      department: "Cataract Surgery",
-      consultationDays: "Tue, Thu, Sat",
-      consultationTime: "10:00 AM - 4:00 PM",
+      specialty: "Consultant Ophthalmologist",
+      qualifications: "MBBS, FCPS (Ophthalmology)",
+      experience: "12+ years",
+      rating: 4.8,
+      reviews: 134,
+      location: "Bishwanath Eye Hospital",
       image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      available: true
+      specializations: ["Retinal Disorders", "Pediatric Ophthalmology", "Emergency Eye Care", "Vision Therapy"],
+      languages: ["Bengali", "English", "Arabic"],
+      availability: "Tue-Thu: 10AM-6PM"
     },
     {
-      id: 3,
       name: "Dr. Fatima Khan",
       specialty: "Pediatric Ophthalmologist",
-      qualifications: "MBBS, DNB (Ophthalmology), Fellowship in Pediatric Ophthalmology",
-      experience: "10 years",
-      achievements: ["Expert in Childhood Vision Disorders", "200+ Pediatric Surgeries"],
-      department: "Pediatric Ophthalmology",
-      consultationDays: "Mon, Wed, Fri",
-      consultationTime: "2:00 PM - 6:00 PM",
-      image: "https://images.unsplash.com/photo-1594824883303-384472988da9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      available: true
+      qualifications: "MBBS, MS (Ophthalmology), Fellowship in Pediatric Ophthalmology",
+      experience: "10+ years",
+      rating: 4.9,
+      reviews: 98,
+      location: "Bishwanath Eye Hospital",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      specializations: ["Children's Eye Care", "Squint Treatment", "Lazy Eye Treatment", "Congenital Eye Disorders"],
+      languages: ["Bengali", "English", "Urdu"],
+      availability: "Mon-Wed-Fri: 9AM-4PM"
     },
     {
-      id: 4,
-      name: "Dr. Abdul Karim",
-      specialty: "Glaucoma Specialist",
-      qualifications: "MBBS, MS (Ophthalmology), Fellowship in Glaucoma",
-      experience: "14 years",
-      achievements: ["Glaucoma Research Publication", "Advanced Surgical Techniques"],
-      department: "Glaucoma",
-      consultationDays: "Tue, Thu, Sat",
-      consultationTime: "9:00 AM - 1:00 PM",
+      name: "Dr. Ahmed Hassan",
+      specialty: "Vitreoretinal Specialist",
+      qualifications: "MBBS, MS (Ophthalmology), Fellowship in Vitreoretinal Surgery",
+      experience: "14+ years",
+      rating: 4.7,
+      reviews: 87,
+      location: "Bishwanath Eye Hospital",
       image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      available: true
+      specializations: ["Retinal Detachment", "Macular Degeneration", "Diabetic Eye Surgery", "Vitrectomy"],
+      languages: ["Bengali", "English"],
+      availability: "Thu-Sat: 11AM-7PM"
     },
     {
-      id: 5,
       name: "Dr. Rashida Begum",
+      specialty: "Corneal Specialist",
+      qualifications: "MBBS, MD (Ophthalmology), Fellowship in Corneal Diseases",
+      experience: "11+ years",
+      rating: 4.8,
+      reviews: 76,
+      location: "Bishwanath Eye Hospital",
+      image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      specializations: ["Corneal Transplant", "Dry Eye Treatment", "Keratoconus", "Corneal Infections"],
+      languages: ["Bengali", "English", "Hindi"],
+      availability: "Mon-Tue-Thu: 10AM-5PM"
+    },
+    {
+      name: "Dr. James Wilson",
       specialty: "Oculoplastic Surgeon",
       qualifications: "MBBS, MS (Ophthalmology), Fellowship in Oculoplastics",
-      experience: "11 years",
-      achievements: ["Expert in Eyelid Surgery", "Facial Reconstruction Specialist"],
-      department: "Oculoplastics",
-      consultationDays: "Mon, Wed, Fri",
-      consultationTime: "10:00 AM - 3:00 PM",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      available: true
+      experience: "9+ years",
+      rating: 4.6,
+      reviews: 64,
+      location: "Bishwanath Eye Hospital",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      specializations: ["Eyelid Surgery", "Tear Duct Surgery", "Orbital Disorders", "Cosmetic Eye Surgery"],
+      languages: ["English", "Bengali"],
+      availability: "Wed-Fri-Sat: 12PM-6PM"
     },
     {
-      id: 6,
-      name: "Dr. Mizanur Rahman",
-      specialty: "Cornea Specialist",
-      qualifications: "MBBS, MD (Ophthalmology), Fellowship in Cornea",
-      experience: "13 years",
-      achievements: ["Corneal Transplant Expert", "100+ Successful Transplants"],
-      department: "Cornea & External Diseases",
-      consultationDays: "Tue, Thu, Sat",
-      consultationTime: "11:00 AM - 5:00 PM",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      available: true
-    },
-    {
-      id: 7,
       name: "Dr. Nasreen Akter",
-      specialty: "Optometrist & Vision Therapist",
-      qualifications: "BSc (Optometry), MSc (Vision Science)",
-      experience: "8 years",
-      achievements: ["Specialist in Vision Therapy", "Learning Disability Expert"],
-      department: "Optometry & Vision Therapy",
-      consultationDays: "Mon to Sat",
-      consultationTime: "9:00 AM - 5:00 PM",
+      specialty: "Glaucoma Specialist",
+      qualifications: "MBBS, FCPS (Ophthalmology), Fellowship in Glaucoma",
+      experience: "13+ years",
+      rating: 4.9,
+      reviews: 112,
+      location: "Bishwanath Eye Hospital",
       image: "https://images.unsplash.com/photo-1594824883303-384472988da9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      available: true
+      specializations: ["Glaucoma Surgery", "Intraocular Pressure Management", "Optic Nerve Assessment", "Advanced Glaucoma Care"],
+      languages: ["Bengali", "English"],
+      availability: "Mon-Wed-Fri: 8AM-3PM"
     },
     {
-      id: 8,
-      name: "Dr. Aminul Islam",
-      specialty: "General Ophthalmologist",
-      qualifications: "MBBS, FCPS (Ophthalmology)",
-      experience: "16 years",
-      achievements: ["Comprehensive Eye Care Expert", "Rural Healthcare Advocate"],
-      department: "General Ophthalmology",
-      consultationDays: "Sun to Thu",
-      consultationTime: "8:00 AM - 6:00 PM",
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      available: true
+      name: "Dr. Michael Brown",
+      specialty: "Refractive Surgeon",
+      qualifications: "MBBS, MS (Ophthalmology), Fellowship in Refractive Surgery",
+      experience: "8+ years",
+      rating: 4.7,
+      reviews: 89,
+      location: "Bishwanath Eye Hospital",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      specializations: ["LASIK Surgery", "PRK Surgery", "ICL Implantation", "Vision Correction"],
+      languages: ["English", "Bengali"],
+      availability: "Tue-Thu-Sat: 1PM-8PM"
     }
   ];
 
-  const doctorsPerPage = 3;
-  const totalPages = Math.ceil(doctors.length / doctorsPerPage);
-
-  const nextPage = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalPages);
-  };
-
-  const prevPage = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
-  };
-
-  const getCurrentDoctors = () => {
-    const startIndex = currentIndex * doctorsPerPage;
-    return doctors.slice(startIndex, startIndex + doctorsPerPage);
-  };
-
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-white" id="doctors">
+    <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50" id="doctors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -138,98 +121,76 @@ const DoctorsSection = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Meet our team of highly qualified and experienced medical professionals dedicated to providing world-class eye care
+            Meet our team of highly qualified and experienced eye care specialists committed to providing world-class healthcare
           </p>
         </div>
 
-        <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {getCurrentDoctors().map((doctor) => (
-              <Card key={doctor.id} className="hover:shadow-lg transition-all duration-300 bg-white border-0 shadow-md">
-                <CardHeader className="text-center pb-4">
-                  <div className="relative mx-auto mb-4">
-                    <img 
-                      src={doctor.image} 
-                      alt={doctor.name}
-                      className="w-32 h-32 rounded-full object-cover mx-auto border-4 border-blue-100"
-                    />
-                    {doctor.available && (
-                      <div className="absolute bottom-2 right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {doctors.map((doctor, index) => (
+            <Card key={index} className="hover:shadow-xl transition-all duration-300 bg-white border-0 shadow-lg">
+              <div className="relative">
+                <img 
+                  src={doctor.image} 
+                  alt={doctor.name}
+                  className="w-full h-48 object-cover rounded-t-lg"
+                />
+                <div className="absolute top-4 right-4 bg-white rounded-full px-2 py-1 shadow-md">
+                  <div className="flex items-center space-x-1">
+                    <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                    <span className="text-sm font-medium">{doctor.rating}</span>
+                  </div>
+                </div>
+              </div>
+              
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg text-gray-900">{doctor.name}</CardTitle>
+                <p className="text-blue-600 font-medium text-sm">{doctor.specialty}</p>
+                <p className="text-gray-600 text-xs">{doctor.qualifications}</p>
+              </CardHeader>
+              
+              <CardContent className="space-y-3">
+                <div className="flex items-center justify-between text-xs text-gray-600">
+                  <div className="flex items-center space-x-1">
+                    <Award className="h-3 w-3" />
+                    <span>{doctor.experience}</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <MapPin className="h-3 w-3" />
+                    <span>{doctor.location}</span>
+                  </div>
+                </div>
+                
+                <div className="text-xs text-gray-600">
+                  <p className="font-medium mb-1">Specializations:</p>
+                  <div className="flex flex-wrap gap-1">
+                    {doctor.specializations.slice(0, 2).map((spec, idx) => (
+                      <span key={idx} className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">
+                        {spec}
+                      </span>
+                    ))}
+                    {doctor.specializations.length > 2 && (
+                      <span className="text-gray-500">+{doctor.specializations.length - 2} more</span>
                     )}
                   </div>
-                  <CardTitle className="text-xl text-gray-900">{doctor.name}</CardTitle>
-                  <CardDescription className="text-blue-600 font-medium">{doctor.specialty}</CardDescription>
-                </CardHeader>
+                </div>
                 
-                <CardContent className="space-y-4">
-                  <div>
-                    <p className="text-sm font-medium text-gray-700 mb-1">Qualifications:</p>
-                    <p className="text-sm text-gray-600">{doctor.qualifications}</p>
+                <div className="text-xs text-gray-600">
+                  <p><span className="font-medium">Languages:</span> {doctor.languages.join(', ')}</p>
+                  <p><span className="font-medium">Available:</span> {doctor.availability}</p>
+                </div>
+                
+                <div className="flex items-center justify-between pt-2">
+                  <div className="text-xs text-gray-500">
+                    {doctor.reviews} reviews
                   </div>
-                  
-                  <div className="flex items-center space-x-4 text-sm text-gray-600">
-                    <div className="flex items-center">
-                      <Award className="h-4 w-4 mr-1 text-blue-600" />
-                      {doctor.experience}
-                    </div>
-                    <div className="flex items-center">
-                      <MapPin className="h-4 w-4 mr-1 text-green-600" />
-                      {doctor.department}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <p className="text-sm font-medium text-gray-700 mb-1">Key Achievements:</p>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      {doctor.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="text-blue-600 mr-2">•</span>
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-gray-50 p-3 rounded-lg">
-                    <div className="flex items-center text-sm text-gray-600 mb-1">
-                      <Calendar className="h-4 w-4 mr-2 text-blue-600" />
-                      <span className="font-medium">Consultation:</span>
-                    </div>
-                    <p className="text-sm text-gray-700">{doctor.consultationDays}</p>
-                    <p className="text-sm text-gray-700">{doctor.consultationTime}</p>
-                  </div>
-                  
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                    Book Appointment
+                  <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
+                    <Calendar className="h-3 w-3 mr-1" />
+                    Book
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Navigation Arrows */}
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-6 bg-white shadow-lg"
-            onClick={prevPage}
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-6 bg-white shadow-lg"
-            onClick={nextPage}
-          >
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </div>
-
-        <div className="text-center">
-          <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3">
-            Show All Doctors
-          </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

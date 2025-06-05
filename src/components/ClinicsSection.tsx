@@ -1,54 +1,49 @@
 
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { MapPin, Clock, Users, Building2 } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { MapPin, Clock, Phone, Eye } from 'lucide-react';
 
 const ClinicsSection = () => {
   const clinics = [
     {
-      id: 'bishwanath',
       name: 'Bishwanath Eye Hospital',
       location: 'Bishwanath, Sylhet',
-      status: 'Open',
-      description: 'Our flagship clinic providing comprehensive eye care services with state-of-the-art equipment and experienced doctors.',
-      services: ['Eye Consultation', 'Cataract Surgery', 'Vision Therapy', 'Diagnostic Services'],
+      status: 'active',
+      services: ['Eye Consultation', 'Cataract Surgery', 'Vision Therapy', 'Pharmacy'],
       hours: '9:00 AM - 6:00 PM',
-      patients: '500+ Monthly',
-      backgroundImage: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      phone: '+880 1XXX-XXXXXX',
+      description: 'Our flagship clinic providing comprehensive eye care services with state-of-the-art equipment.',
+      backgroundImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
-      id: 'mohammadpur',
       name: 'Mohammadpur Vision Center',
       location: 'Mohammadpur, Dhaka',
-      status: 'Coming Soon',
-      description: 'Urban clinic focusing on comprehensive eye care and vision therapy services.',
-      services: ['Eye Consultation', 'Vision Therapy', 'Contact Lenses', 'Eye Care Shop'],
+      status: 'coming-soon',
+      services: ['Eye Consultation', 'Surgery', 'Diagnostic', 'Pharmacy'],
       hours: 'Coming Soon',
-      patients: 'Opening 2024',
-      backgroundImage: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      phone: 'Coming Soon',
+      description: 'Urban healthcare facility bringing world-class eye care to the heart of Dhaka.',
+      backgroundImage: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
-      id: 'zokigonj',
-      name: 'Zokigonj Rural Clinic',
+      name: 'Zokigonj Medical Center',
       location: 'Zokigonj, Sylhet',
-      status: 'Coming Soon',
-      description: 'Rural healthcare facility designed to serve remote communities with mobile outreach programs.',
-      services: ['Basic Eye Care', 'Mobile Camps', 'Community Outreach', 'Preventive Care'],
+      status: 'coming-soon',
+      services: ['Rural Outreach', 'Basic Eye Care', 'Consultation', 'Pharmacy'],
       hours: 'Coming Soon',
-      patients: 'Opening 2024',
-      backgroundImage: 'https://images.unsplash.com/photo-1439337153520-7082a56a81f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      phone: 'Coming Soon',
+      description: 'Community-focused clinic designed to serve rural populations with accessible healthcare.',
+      backgroundImage: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
-      id: 'srimongol',
-      name: 'Srimongol Community Hospital',
+      name: 'Srimongol Wellness Hub',
       location: 'Srimongol, Moulvibazar',
-      status: 'Coming Soon',
-      description: 'Community-focused healthcare facility serving tea garden workers and rural populations.',
-      services: ['General Medicine', 'Eye Care', 'Community Health', 'Emergency Care'],
+      status: 'coming-soon',
+      services: ['Vision Screening', 'Consultation', 'Outreach', 'Education'],
       hours: 'Coming Soon',
-      patients: 'Opening 2025',
-      backgroundImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      phone: 'Coming Soon',
+      description: 'Specialized center focusing on preventive care and community health education.',
+      backgroundImage: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     }
   ];
 
@@ -61,88 +56,72 @@ const ClinicsSection = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Strategically located healthcare facilities bringing world-class medical services to urban and rural Bangladesh
+            Strategically located across Bangladesh to make world-class healthcare accessible to both urban and rural communities
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {clinics.map((clinic) => (
-            <Card 
-              key={clinic.id} 
-              className={`hover:shadow-xl transition-all duration-300 overflow-hidden ${
-                clinic.status === 'Open' ? 'ring-2 ring-green-500 ring-opacity-20' : 'opacity-75'
-              }`}
-            >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {clinics.map((clinic, index) => (
+            <Card key={index} className={`hover:shadow-xl transition-all duration-300 overflow-hidden ${
+              clinic.status === 'active' ? 'ring-2 ring-green-500 shadow-lg' : 'shadow-lg'
+            }`}>
               <div 
                 className="h-48 bg-cover bg-center relative"
-                style={{ 
-                  backgroundImage: `url(${clinic.backgroundImage})`,
-                  filter: clinic.status === 'Coming Soon' ? 'grayscale(100%)' : 'none'
-                }}
+                style={{ backgroundImage: `url(${clinic.backgroundImage})` }}
               >
                 <div className={`absolute inset-0 ${
-                  clinic.status === 'Open' 
-                    ? 'bg-gradient-to-r from-blue-600/80 to-green-600/80' 
-                    : 'bg-gray-900/60'
+                  clinic.status === 'active' 
+                    ? 'bg-gradient-to-t from-green-600/80 to-blue-600/60' 
+                    : 'bg-gradient-to-t from-gray-600/80 to-gray-400/60'
                 }`}></div>
                 <div className="absolute top-4 right-4">
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                    clinic.status === 'Open' 
-                      ? 'bg-green-500 text-white' 
-                      : 'bg-gray-500 text-white'
-                  }`}>
-                    {clinic.status}
-                  </span>
+                  {clinic.status === 'active' ? (
+                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                      Active
+                    </span>
+                  ) : (
+                    <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                      Coming Soon
+                    </span>
+                  )}
                 </div>
                 <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-xl font-bold">{clinic.name}</h3>
-                  <p className="text-sm opacity-90">{clinic.location}</p>
+                  <Eye className="h-8 w-8" />
                 </div>
               </div>
               
-              <CardHeader>
-                <CardDescription className="text-gray-600">
-                  {clinic.description}
-                </CardDescription>
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg text-gray-900">{clinic.name}</CardTitle>
+                <div className="flex items-center text-gray-600 text-sm">
+                  <MapPin className="h-4 w-4 mr-1" />
+                  {clinic.location}
+                </div>
               </CardHeader>
               
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div className="flex items-center space-x-2">
-                    <Clock className="h-4 w-4 text-blue-600" />
-                    <span className="text-gray-600">{clinic.hours}</span>
+              <CardContent className="space-y-3">
+                <p className="text-gray-600 text-sm">{clinic.description}</p>
+                
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Clock className="h-4 w-4 mr-2 text-blue-600" />
+                    {clinic.hours}
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <Users className="h-4 w-4 text-green-600" />
-                    <span className="text-gray-600">{clinic.patients}</span>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Phone className="h-4 w-4 mr-2 text-blue-600" />
+                    {clinic.phone}
                   </div>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Services Available:</h4>
+                  <h4 className="font-medium text-gray-900 mb-2 text-sm">Services:</h4>
                   <div className="flex flex-wrap gap-1">
-                    {clinic.services.map((service, index) => (
-                      <span 
-                        key={index}
-                        className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full"
-                      >
+                    {clinic.services.map((service, idx) => (
+                      <span key={idx} className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
                         {service}
                       </span>
                     ))}
                   </div>
                 </div>
-                
-                <Button 
-                  className={`w-full ${
-                    clinic.status === 'Open'
-                      ? 'bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700'
-                      : 'bg-gray-400 cursor-not-allowed'
-                  }`}
-                  disabled={clinic.status !== 'Open'}
-                >
-                  <MapPin className="mr-2 h-4 w-4" />
-                  {clinic.status === 'Open' ? 'View Details' : 'Opening Soon'}
-                </Button>
               </CardContent>
             </Card>
           ))}
