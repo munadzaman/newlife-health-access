@@ -16,18 +16,41 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        {/* First row with logo and search */}
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
               src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
               alt="Newlife Medical Services" 
-              className="h-16 w-auto"
+              className="h-12 w-auto"
             />
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-8">
+          {/* Search */}
+          <div className="hidden md:flex items-center">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Input 
+                placeholder="Search..." 
+                className="pl-10 w-64 border-gray-300 focus:border-blue-600 focus:ring-blue-600"
+              />
+            </div>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            className="lg:hidden p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <Menu className="h-6 w-6" />
+          </Button>
+        </div>
+
+        {/* Second row with navigation menu */}
+        <div className="hidden lg:flex items-center justify-between h-16 border-t border-gray-100">
+          <div className="flex items-center space-x-6">
             <a href="#about" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
               About Us
             </a>
@@ -106,6 +129,29 @@ const Navigation = () => {
             <a href="#social-enterprise" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
               Social Enterprise
             </a>
+          </div>
+
+          <div className="flex items-center space-x-6">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
+                Digital Services <ChevronDown className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-white border border-gray-200 shadow-xl z-50 min-w-[200px]">
+                <DropdownMenuItem className="py-3 px-4 hover:bg-blue-50 cursor-pointer">
+                  <div className="w-full">
+                    <p className="font-medium text-gray-700">E-Pharmacy</p>
+                    <p className="text-xs text-gray-500">Coming Soon</p>
+                  </div>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="py-3 px-4 hover:bg-blue-50 cursor-pointer">
+                  <div className="w-full">
+                    <p className="font-medium text-gray-700">E-Eyewear</p>
+                    <p className="text-xs text-gray-500">Coming Soon</p>
+                  </div>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <a href="#investors" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
               Investors
             </a>
@@ -119,26 +165,6 @@ const Navigation = () => {
               Patient Portal
             </Button>
           </div>
-
-          {/* Search */}
-          <div className="hidden md:flex items-center">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              <Input 
-                placeholder="Search..." 
-                className="pl-10 w-64 border-gray-300 focus:border-blue-600 focus:ring-blue-600"
-              />
-            </div>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            className="lg:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            <Menu className="h-6 w-6" />
-          </Button>
         </div>
 
         {/* Mobile Menu */}
