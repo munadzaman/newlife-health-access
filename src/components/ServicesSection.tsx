@@ -64,7 +64,6 @@ const ServicesSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Our Services
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             At Newlife clinics we are dedicated to providing high-quality, UK standard healthcare services made affordable and accessible through price adjustments, subsidies and sponsors.
           </p>
@@ -74,7 +73,7 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={index} className="hover:shadow-xl transition-shadow duration-300 group shadow-lg">
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 group">
                 <CardHeader>
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
                     <IconComponent className="h-6 w-6 text-blue-600" />

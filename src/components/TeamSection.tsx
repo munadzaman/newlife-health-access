@@ -1,110 +1,157 @@
 
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Linkedin, Mail } from 'lucide-react';
+import { Globe, Award } from 'lucide-react';
 
 const TeamSection = () => {
-  const teamMembers = [
+  const boardMembers = [
     {
-      name: "Dr. Anwarul Abedin",
-      position: "Chief Executive Officer",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Leading healthcare innovation with over 20 years of experience in medical administration and strategic planning.",
-      linkedin: "#",
-      email: "anwarul@newlifemedical.com"
+      name: "Syed Tufayel Rahman",
+      position: "Chairman & Founder",
+      category: "Board of Directors",
+      bio: "UK-based experienced and celebrated optometrist with deep-seated roots in Bangladesh",
+      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Dr Ali Ahmed Shuaib",
+      position: "Director",
+      category: "Board of Directors",
+      bio: "Medical professional with extensive healthcare experience",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Akhtar Uzzaman",
+      position: "Director",
+      category: "Board of Directors",
+      bio: "Business and management consultant with international experience",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Abdul Hamid Mohon",
+      position: "Director",
+      category: "Board of Directors",
+      bio: "Legal and business professional",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Dewan Salman Sany",
+      position: "Director",
+      category: "Board of Directors",
+      bio: "Business development and strategic planning expert",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Dr Ashraful Islam",
+      position: "Medical Director",
+      category: "Board of Directors",
+      bio: "Medical professional specializing in healthcare operations",
+      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    }
+  ];
+
+  const operationalTeam = [
+    {
+      name: "Shohel Rana",
+      position: "Head of Operations",
+      category: "Operational Team",
+      bio: "Energetic, hard-working and distinguished eye care professional leading our operations",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Dr Rahman Specialized",
+      position: "Chief Ophthalmologist",
+      category: "Operational Team",
+      bio: "Leading specialist in eye care and surgical procedures",
+      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Ashrafuzzaman Munad",
+      position: "Head of Finance & IT",
+      category: "Operational Team",
+      bio: "Financial management and technology infrastructure specialist",
+      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
       name: "Hamid Hussain Azad",
       position: "Executive Manager",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Experienced executive manager with expertise in healthcare operations and business development.",
-      linkedin: "#",
-      email: "hamid@newlifemedical.com"
-    },
-    {
-      name: "Dr. Sarah Thompson",
-      position: "Medical Director",
-      image: "https://images.unsplash.com/photo-1594824883303-384472988da9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "UK-trained ophthalmologist with extensive experience in rural healthcare delivery and medical training programs.",
-      linkedin: "#",
-      email: "sarah@newlifemedical.com"
-    },
-    {
-      name: "Mohammad Khan",
-      position: "Operations Manager",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Specialist in healthcare operations management with a focus on rural clinic development and sustainability.",
-      linkedin: "#",
-      email: "mohammad@newlifemedical.com"
-    },
-    {
-      name: "Dr. Rashida Ahmed",
-      position: "Clinical Director",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Expert in clinical governance and quality assurance with experience in international healthcare standards.",
-      linkedin: "#",
-      email: "rashida@newlifemedical.com"
-    },
-    {
-      name: "James Wilson",
-      position: "Finance Director",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      bio: "Financial strategist with expertise in healthcare economics and sustainable business model development.",
-      linkedin: "#",
-      email: "james@newlifemedical.com"
+      category: "Operational Team",
+      bio: "Experienced professional with wealth of experience in the Bangladeshi health and NGO sector",
+      image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
 
+  const TeamCard = ({ member }: { member: any }) => (
+    <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+      <div className="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden">
+        <img 
+          src={member.image} 
+          alt={member.name}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <h3 className="text-lg font-bold text-gray-900 text-center mb-2">{member.name}</h3>
+      <p className="text-blue-600 font-medium text-center mb-3">{member.position}</p>
+      <p className="text-gray-600 text-sm text-center">{member.bio}</p>
+    </div>
+  );
+
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50" id="team">
+    <section id="team" className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Our Team
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Meet the dedicated professionals who are making world-class healthcare accessible in rural Bangladesh
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            The Newlife Medical Services team is an international group of medical professionals, 
+            management consultants, legal professionals, and business people dedicated to making healthcare accessible.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map((member, index) => (
-            <Card key={index} className="hover:shadow-xl transition-all duration-300 bg-white border-0 shadow-lg">
-              <CardHeader className="text-center pb-4">
-                <div className="mx-auto mb-4">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-40 h-40 rounded-full object-cover mx-auto border-4 border-gray-100"
-                  />
-                </div>
-                <CardTitle className="text-xl text-gray-900">{member.name}</CardTitle>
-                <p className="text-blue-600 font-medium">{member.position}</p>
-              </CardHeader>
-              
-              <CardContent className="space-y-4">
-                <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
-                
-                <div className="flex justify-center space-x-4 pt-4 border-t border-gray-100">
-                  <a 
-                    href={member.linkedin} 
-                    className="text-gray-400 hover:text-blue-600 transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                  <a 
-                    href={`mailto:${member.email}`} 
-                    className="text-gray-400 hover:text-blue-600 transition-colors"
-                    aria-label="Email"
-                  >
-                    <Mail className="h-5 w-5" />
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        {/* Team Overview */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="text-center">
+            <div className="bg-blue-100 p-4 rounded-full w-16 h-16 mx-auto mb-4">
+              <Globe className="h-8 w-8 text-blue-600 mx-auto mt-1" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">International Board</h3>
+            <p className="text-gray-600">UK-based leadership with deep Bangladesh connections</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="bg-green-100 p-4 rounded-full w-16 h-16 mx-auto mb-4">
+              <Award className="h-8 w-8 text-green-600 mx-auto mt-1" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Operational Excellence</h3>
+            <p className="text-gray-600">Local expertise driving day-to-day healthcare delivery</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="bg-purple-100 p-4 rounded-full w-16 h-16 mx-auto mb-4">
+              <Award className="h-8 w-8 text-purple-600 mx-auto mt-1" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Leadership Team</h3>
+            <p className="text-gray-600">Executive management with healthcare sector expertise</p>
+          </div>
+        </div>
+
+        {/* Board of Directors */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Board of Directors</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {boardMembers.map((member, index) => (
+              <TeamCard key={index} member={member} />
+            ))}
+          </div>
+        </div>
+
+        {/* Operational Team */}
+        <div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Operational Team</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {operationalTeam.map((member, index) => (
+              <TeamCard key={index} member={member} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
