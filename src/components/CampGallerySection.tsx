@@ -1,78 +1,133 @@
 
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import React, { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import SectionTitle from './SectionTitle';
+import { ChevronLeft, ChevronRight, Play, Eye, X } from 'lucide-react';
 
 const CampGallerySection = () => {
-  const galleryImages = [
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const galleryItems = [
     {
-      src: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Rural medical camp',
-      caption: 'Eye screening camp in rural Bangladesh'
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Cataract surgery',
-      caption: 'Free cataract surgery program'
-    },
-    {
+      type: 'image',
       src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Community outreach',
-      caption: 'Community health education'
+      title: 'Rural Eye Camp - Sylhet',
+      description: 'Free eye screening for rural communities'
     },
     {
+      type: 'image',
+      src: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      title: 'Cataract Surgery Camp',
+      description: 'Providing free cataract surgeries to underprivileged patients'
+    },
+    {
+      type: 'video',
       src: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Vision therapy',
-      caption: 'Vision therapy sessions'
+      title: 'Vision Therapy Session',
+      description: 'Helping children with learning difficulties through vision therapy',
+      videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
     },
     {
-      src: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Medical consultation',
-      caption: 'Free medical consultations'
+      type: 'image',
+      src: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      title: 'Mobile Clinic Outreach',
+      description: 'Bringing healthcare services to remote villages'
     },
     {
-      src: 'https://images.unsplash.com/photo-1504439468489-c8920d796a29?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      alt: 'Healthcare team',
-      caption: 'Our dedicated healthcare team'
+      type: 'image',
+      src: 'https://images.unsplash.com/photo-1576671081837-49000212a370?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      title: 'Community Health Education',
+      description: 'Educating communities about eye health and prevention'
+    },
+    {
+      type: 'video',
+      src: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      title: 'Surgical Procedures',
+      description: 'Advanced surgical procedures in our modern facilities',
+      videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
     }
   ];
 
+  const handleItemClick = (item: any) => {
+    if (item.type === 'video' && item.videoUrl) {
+      window.open(item.videoUrl, '_blank');
+    } else if (item.type === 'image') {
+      setSelectedImage(item.src);
+    }
+  };
+
   return (
-    <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle 
-          title="Camp Gallery"
-          subtitle="Moments from our rural outreach camps and community health programs"
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {galleryImages.map((image, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white">
-              <CardContent className="p-0">
-                <div className="relative">
-                  <img 
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white font-medium">{image.caption}</p>
+    <>
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="shadow-lg">
+            <CardHeader className="text-center bg-gradient-to-r from-blue-600 to-green-600 text-white">
+              <CardTitle className="text-3xl font-bold flex items-center justify-center">
+                <Eye className="mr-3 h-8 w-8" />
+                Camp Gallery
+              </CardTitle>
+              <p className="text-xl opacity-90 mt-2">
+                Witness our impact through community outreach and medical camps
+              </p>
+            </CardHeader>
+            <CardContent className="p-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                {galleryItems.map((item, index) => (
+                  <div 
+                    key={index} 
+                    className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow"
+                    onClick={() => handleItemClick(item)}
+                  >
+                    <img 
+                      src={item.src} 
+                      alt={item.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    {item.type === 'video' && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 group-hover:bg-opacity-40 transition-colors">
+                        <div className="bg-white bg-opacity-90 rounded-full p-3">
+                          <Play className="h-6 w-6 text-blue-600" />
+                        </div>
+                      </div>
+                    )}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3">
+                      <h3 className="text-white font-semibold text-sm">{item.title}</h3>
+                      <p className="text-gray-200 text-xs">{item.description}</p>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                ))}
+              </div>
 
-        <div className="text-center">
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium">
-            View More
-          </Button>
+              <div className="text-center">
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-3">
+                  View More Gallery
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-4xl max-h-full">
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition-colors"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <img 
+              src={selectedImage} 
+              alt="Gallery item"
+              className="max-w-full max-h-full object-contain rounded-lg"
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

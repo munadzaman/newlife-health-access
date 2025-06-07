@@ -2,7 +2,6 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Heart, Globe, Users, Award } from 'lucide-react';
-import SectionTitle from './SectionTitle';
 
 const AboutSection = () => {
   const values = [
@@ -29,12 +28,13 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50" id="about">
+    <section className="py-16 bg-gray-50" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle title="About Us" />
-        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              About Newlife Medical Services
+            </h2>
             <div className="space-y-4 text-gray-600">
               <p>
                 The Newlife Medical Services is a project initiated by a group of UK based professionals 
@@ -60,7 +60,7 @@ const AboutSection = () => {
             {values.map((value, index) => {
               const IconComponent = value.icon;
               return (
-                <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow bg-white">
+                <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
                     <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-6 w-6 text-blue-600" />

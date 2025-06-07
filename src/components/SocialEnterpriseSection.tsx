@@ -1,124 +1,102 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, Users, Building2, Handshake, Star } from 'lucide-react';
+import { Heart, Users, Building2, Camera } from 'lucide-react';
 
 const SocialEnterpriseSection = () => {
   return (
     <section id="social-enterprise" className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center mb-4">
-            <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent flex-1 max-w-20"></div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mx-6">
-              Social Enterprise
-            </h2>
-            <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent flex-1 max-w-20"></div>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Social Enterprise
+          </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Making World Class Healthcare Accessible through commerce for good combined with philanthropy
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <div className="bg-blue-100 p-3 rounded-full w-fit mb-4">
-              <Building2 className="h-6 w-6 text-blue-600" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Two-Sided Approach</h3>
+            
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="bg-blue-100 p-3 rounded-full">
+                  <Building2 className="h-6 w-6 text-blue-600" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">World Class Healthcare</h4>
+                  <p className="text-gray-600">
+                    We provide world class facilities and infrastructure through competitive pricing that offers value for money, attracting investment through healthy returns.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="bg-green-100 p-3 rounded-full">
+                  <Heart className="h-6 w-6 text-green-600" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Accessible for Everyone</h4>
+                  <p className="text-gray-600">
+                    We make services accessible through subsidization, sponsorship facilitation, and strategic placement at thana (sub-district) level for easy rural access.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="bg-purple-100 p-3 rounded-full">
+                  <Users className="h-6 w-6 text-purple-600" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Rural Outreach</h4>
+                  <p className="text-gray-600">
+                    We conduct rural camps to take services to patients' doorsteps and work with NGOs, charities, and government agencies.
+                  </p>
+                </div>
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">World Class Healthcare</h3>
-            <p className="text-gray-600">
-              We provide world class facilities through competitive pricing that offers value for money, attracting investment through healthy returns.
-            </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <div className="bg-green-100 p-3 rounded-full w-fit mb-4">
-              <Heart className="h-6 w-6 text-green-600" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Accessible for Everyone</h3>
-            <p className="text-gray-600">
-              We make services accessible through subsidization, sponsorship facilitation, and strategic placement at thana level for easy rural access.
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <h3 className="text-xl font-bold text-gray-900 mb-6">Current Partners</h3>
+            <p className="text-gray-600 mb-6">
+              We work with international and national NGO and governmental agency partners to deliver healthcare to rural Bangladesh.
             </p>
-          </div>
+            
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="bg-gray-100 p-4 rounded-lg text-center">
+                <p className="font-medium text-gray-800">GRT</p>
+              </div>
+              <div className="bg-gray-100 p-4 rounded-lg text-center">
+                <p className="font-medium text-gray-800">BHDI</p>
+              </div>
+            </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <div className="bg-purple-100 p-3 rounded-full w-fit mb-4">
-              <Users className="h-6 w-6 text-purple-600" />
+            <div className="space-y-3">
+              <Button className="w-full bg-green-600 hover:bg-green-700">
+                <Camera className="mr-2 h-4 w-4" />
+                View Camp Gallery
+              </Button>
+              <Button variant="outline" className="w-full">
+                Sponsor Cataract Operations
+              </Button>
+              <Button variant="outline" className="w-full">
+                Sponsor Medical Camps
+              </Button>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Rural Outreach</h3>
-            <p className="text-gray-600">
-              We conduct rural camps to take services to patients' doorsteps and work with NGOs, charities, and government agencies.
-            </p>
           </div>
         </div>
 
-        {/* Current Partners Section */}
-        <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
-          <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Our Current Partners</h3>
-            <p className="text-gray-600">Working together to make healthcare accessible for all</p>
-          </div>
-          <div className="flex justify-center items-center space-x-12">
-            <div className="text-center">
-              <div className="bg-blue-50 p-4 rounded-lg mb-2">
-                <span className="text-2xl font-bold text-blue-600">GRT</span>
-              </div>
-              <p className="text-sm text-gray-600">Green Relief Trust</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-green-50 p-4 rounded-lg mb-2">
-                <span className="text-2xl font-bold text-green-600">BHDI</span>
-              </div>
-              <p className="text-sm text-gray-600">Bangladesh Health Development Initiative</p>
-            </div>
-            <div className="text-center">
-              <div className="bg-purple-50 p-4 rounded-lg mb-2">
-                <span className="text-2xl font-bold text-purple-600">You&Eye</span>
-              </div>
-              <p className="text-sm text-gray-600">Vision Care Initiative</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Donor Attraction Section */}
-        <div className="text-center bg-gradient-to-r from-blue-600 to-green-600 text-white p-8 rounded-lg shadow-lg mb-8">
-          <div className="bg-white/20 p-3 rounded-full w-fit mx-auto mb-4">
-            <Star className="h-6 w-6 text-white" />
-          </div>
-          <h3 className="text-2xl font-bold mb-4">Join Our Mission to Transform Lives</h3>
-          <p className="mb-6 max-w-2xl mx-auto text-blue-50">
-            Your donation can restore sight and hope to thousands of people in rural Bangladesh. Every contribution, no matter the size, makes a meaningful difference in someone's life.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
-              Become a Donor Today
-            </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-              See Our Impact Stories
-            </Button>
-          </div>
-        </div>
-
-        {/* Partner With Us Section */}
         <div className="text-center bg-white p-8 rounded-lg shadow-lg">
-          <div className="bg-orange-100 p-3 rounded-full w-fit mx-auto mb-4">
-            <Handshake className="h-6 w-6 text-orange-600" />
-          </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Partner With Us</h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Partner With Us</h3>
+          <p className="text-gray-600 mb-6">
             If you are an NGO, charity, philanthropist, or government agency passionate about health and wellbeing of the poor and vulnerable in Bangladesh, let's work together.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Contact Us for Partnership
-            </Button>
-            <Button variant="outline" size="lg">
-              Sponsor Cataract Operations
-            </Button>
-            <Button variant="outline" size="lg">
-              Sponsor Medical Camps
-            </Button>
-          </div>
+          <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+            Contact Us for Partnership
+          </Button>
         </div>
       </div>
     </section>
