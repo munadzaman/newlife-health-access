@@ -18,20 +18,35 @@ const Navigation = () => {
     <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo Row */}
-        <div className="flex justify-center py-4 border-b border-gray-100">
+        <div className="flex justify-center py-3 border-b border-gray-100">
           <Link to="/">
             <img 
               src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
               alt="Newlife Medical Services" 
-              className="h-16 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
         </div>
 
         {/* Navigation Row */}
-        <div className="flex justify-between items-center h-16">
-          {/* Main Navigation */}
-          <div className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
+        <div className="flex justify-between items-center h-12">
+          {/* Search and Contact - Left Side */}
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Input 
+                placeholder="Search..." 
+                className="pl-10 w-48 border-gray-300 focus:border-blue-600 focus:ring-blue-600"
+              />
+            </div>
+            <Button className="bg-green-600 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-lg transition-all">
+              <Phone className="mr-2 h-4 w-4" />
+              Contact
+            </Button>
+          </div>
+
+          {/* Main Navigation - Center */}
+          <div className="hidden lg:flex items-center space-x-8">
             <Link to="/about" className="text-gray-800 hover:text-blue-600 transition-colors font-medium">
               About Us
             </Link>
@@ -89,9 +104,6 @@ const Navigation = () => {
             <Link to="/doctors" className="text-gray-800 hover:text-blue-600 transition-colors font-medium">
               Our Doctors
             </Link>
-            <Link to="/booking" className="text-gray-800 hover:text-blue-600 transition-colors font-medium">
-              Book Appointment
-            </Link>
             <Link to="/social-enterprise" className="text-gray-800 hover:text-blue-600 transition-colors font-medium">
               Social Enterprise
             </Link>
@@ -104,21 +116,6 @@ const Navigation = () => {
             <Link to="/news" className="text-gray-800 hover:text-blue-600 transition-colors font-medium">
               News
             </Link>
-          </div>
-
-          {/* Search and Contact */}
-          <div className="hidden md:flex items-center space-x-4">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              <Input 
-                placeholder="Search..." 
-                className="pl-10 w-48 border-gray-300 focus:border-blue-600 focus:ring-blue-600"
-              />
-            </div>
-            <Button className="bg-green-600 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-lg transition-all">
-              <Phone className="mr-2 h-4 w-4" />
-              Contact
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -139,7 +136,6 @@ const Navigation = () => {
               <Link to="/clinics" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Our Clinics</Link>
               <Link to="/services" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Our Services</Link>
               <Link to="/doctors" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Our Doctors</Link>
-              <Link to="/booking" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Book Appointment</Link>
               <Link to="/social-enterprise" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Social Enterprise</Link>
               <Link to="/investors" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Investors</Link>
               <Link to="/team" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Our Team</Link>
