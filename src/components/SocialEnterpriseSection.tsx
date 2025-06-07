@@ -1,16 +1,20 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, Users, Building2, Handshake } from 'lucide-react';
+import { Heart, Users, Building2, Handshake, Star } from 'lucide-react';
 
 const SocialEnterpriseSection = () => {
   return (
     <section id="social-enterprise" className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Social Enterprise
-          </h2>
+          <div className="flex items-center justify-center mb-4">
+            <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent flex-1 max-w-20"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mx-6">
+              Social Enterprise
+            </h2>
+            <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent flex-1 max-w-20"></div>
+          </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Making World Class Healthcare Accessible through commerce for good combined with philanthropy
           </p>
@@ -48,8 +52,55 @@ const SocialEnterpriseSection = () => {
           </div>
         </div>
 
+        {/* Current Partners Section */}
+        <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
+          <div className="text-center mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Our Current Partners</h3>
+            <p className="text-gray-600">Working together to make healthcare accessible for all</p>
+          </div>
+          <div className="flex justify-center items-center space-x-12">
+            <div className="text-center">
+              <div className="bg-blue-50 p-4 rounded-lg mb-2">
+                <span className="text-2xl font-bold text-blue-600">GRT</span>
+              </div>
+              <p className="text-sm text-gray-600">Green Relief Trust</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-green-50 p-4 rounded-lg mb-2">
+                <span className="text-2xl font-bold text-green-600">BHDI</span>
+              </div>
+              <p className="text-sm text-gray-600">Bangladesh Health Development Initiative</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-purple-50 p-4 rounded-lg mb-2">
+                <span className="text-2xl font-bold text-purple-600">You&Eye</span>
+              </div>
+              <p className="text-sm text-gray-600">Vision Care Initiative</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Donor Attraction Section */}
+        <div className="text-center bg-gradient-to-r from-blue-600 to-green-600 text-white p-8 rounded-lg shadow-lg mb-8">
+          <div className="bg-white/20 p-3 rounded-full w-fit mx-auto mb-4">
+            <Star className="h-6 w-6 text-white" />
+          </div>
+          <h3 className="text-2xl font-bold mb-4">Join Our Mission to Transform Lives</h3>
+          <p className="mb-6 max-w-2xl mx-auto text-blue-50">
+            Your donation can restore sight and hope to thousands of people in rural Bangladesh. Every contribution, no matter the size, makes a meaningful difference in someone's life.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
+              Become a Donor Today
+            </Button>
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+              See Our Impact Stories
+            </Button>
+          </div>
+        </div>
+
         {/* Partner With Us Section */}
-        <div className="text-center bg-white p-8 rounded-lg shadow-lg mb-8">
+        <div className="text-center bg-white p-8 rounded-lg shadow-lg">
           <div className="bg-orange-100 p-3 rounded-full w-fit mx-auto mb-4">
             <Handshake className="h-6 w-6 text-orange-600" />
           </div>

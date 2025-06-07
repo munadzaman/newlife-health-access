@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Heart, Globe, Users, Award } from 'lucide-react';
+import SectionTitle from './SectionTitle';
 
 const AboutSection = () => {
   const values = [
@@ -30,11 +31,10 @@ const AboutSection = () => {
   return (
     <section className="py-16 bg-gray-50" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle title="About Us" />
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              About Us
-            </h2>
             <div className="space-y-4 text-gray-600">
               <p>
                 The Newlife Medical Services is a project initiated by a group of UK based professionals 
