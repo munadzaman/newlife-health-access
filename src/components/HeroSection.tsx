@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -48,6 +48,13 @@ const HeroSection = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const handleWhatsAppBooking = () => {
+    const phoneNumber = "8801234567890"; // Replace with actual WhatsApp number
+    const message = "Hello! I would like to book an appointment at Newlife Medical Services.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section className="relative h-screen overflow-hidden">
       {slides.map((slide, index) => (
@@ -61,19 +68,19 @@ const HeroSection = () => {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.image})` }}
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50" />
+          <div className="absolute inset-0 bg-black bg-opacity-40" />
           
           <div className="relative h-full flex items-center justify-center text-white">
             <div className="text-center max-w-4xl px-4">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in drop-shadow-2xl">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
                 {slide.title}
               </h1>
-              <p className="text-xl md:text-2xl mb-8 opacity-90 drop-shadow-lg">
+              <p className="text-xl md:text-2xl mb-8 opacity-90">
                 {slide.subtitle}
               </p>
               
-              <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 mb-8 max-w-md mx-auto border border-white border-opacity-30">
-                <div className="text-3xl font-bold text-green-400 drop-shadow-lg">{slide.stat}</div>
+              <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg p-6 mb-8 max-w-md mx-auto border">
+                <div className="text-3xl font-bold text-green-600">{slide.stat}</div>
               </div>
 
               <div className="flex flex-col md:flex-row gap-4 justify-center">
@@ -81,9 +88,14 @@ const HeroSection = () => {
                   <Calendar className="mr-2 h-5 w-5" />
                   Book Appointment
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 shadow-lg">
-                  <MapPin className="mr-2 h-5 w-5" />
-                  Find Our Clinics
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white text-white hover:bg-white hover:text-green-600 px-8 py-3 shadow-lg"
+                  onClick={handleWhatsAppBooking}
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Book via WhatsApp
                 </Button>
               </div>
             </div>
@@ -94,13 +106,13 @@ const HeroSection = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all backdrop-blur-sm"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all"
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all backdrop-blur-sm"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all"
       >
         <ChevronRight className="h-6 w-6" />
       </button>
