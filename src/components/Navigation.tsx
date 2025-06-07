@@ -17,24 +17,20 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Row - Search, Contact, and Social Media */}
-        <div className="flex justify-between items-center py-2 border-b border-gray-100">
-          {/* Left Side - Search and Contact */}
-          <div className="flex items-center space-x-4">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              <Input 
-                placeholder="Search..." 
-                className="pl-10 w-48 border-gray-300 focus:border-blue-600 focus:ring-blue-600 h-8 text-sm"
-              />
-            </div>
-            <Button className="bg-green-600 hover:bg-green-700 text-white font-medium px-3 py-1 text-sm rounded-lg transition-all h-8">
-              <Phone className="mr-2 h-3 w-3" />
-              Contact
-            </Button>
-          </div>
+        {/* Top Row - Logo */}
+        <div className="flex justify-center py-3 border-b border-gray-100">
+          <Link to="/">
+            <img 
+              src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
+              alt="Newlife Medical Services" 
+              className="h-12 w-auto"
+            />
+          </Link>
+        </div>
 
-          {/* Right Side - Social Media Icons */}
+        {/* Second Row - Social Media, Search, and Contact */}
+        <div className="flex justify-between items-center py-2">
+          {/* Left Side - Social Media Icons */}
           <div className="flex items-center space-x-3">
             <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors">
               <Facebook className="h-4 w-4" />
@@ -49,21 +45,25 @@ const Navigation = () => {
               <Twitter className="h-4 w-4" />
             </a>
           </div>
-        </div>
 
-        {/* Logo Row */}
-        <div className="flex justify-center py-4">
-          <Link to="/">
-            <img 
-              src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
-              alt="Newlife Medical Services" 
-              className="h-16 w-auto"
-            />
-          </Link>
+          {/* Right Side - Search and Contact */}
+          <div className="flex items-center space-x-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Input 
+                placeholder="Search..." 
+                className="pl-10 w-48 border-gray-300 focus:border-blue-600 focus:ring-blue-600 h-8 text-sm"
+              />
+            </div>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-3 py-1 text-sm rounded-lg transition-all h-8">
+              <Phone className="mr-2 h-3 w-3" />
+              Contact
+            </Button>
+          </div>
         </div>
 
         {/* Navigation Row */}
-        <div className="flex justify-center items-center h-12">
+        <div className="flex justify-center items-center h-10">
           {/* Main Navigation - Center */}
           <div className="hidden lg:flex items-center space-x-8">
             <Link to="/about" className="text-gray-800 hover:text-blue-600 transition-colors font-medium">

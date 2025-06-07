@@ -29,7 +29,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50" id="about">
+    <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title="About Us" />
         
@@ -60,7 +60,7 @@ const AboutSection = () => {
             {values.map((value, index) => {
               const IconComponent = value.icon;
               return (
-                <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
+                <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow bg-white">
                   <CardContent className="pt-6">
                     <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-6 w-6 text-blue-600" />

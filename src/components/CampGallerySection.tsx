@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import SectionTitle from './SectionTitle';
 
 const CampGallerySection = () => {
@@ -38,16 +39,16 @@ const CampGallerySection = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
           title="Camp Gallery"
           subtitle="Moments from our rural outreach camps and community health programs"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {galleryImages.map((image, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white">
               <CardContent className="p-0">
                 <div className="relative">
                   <img 
@@ -63,6 +64,12 @@ const CampGallerySection = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="text-center">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium">
+            View More
+          </Button>
         </div>
       </div>
     </section>
