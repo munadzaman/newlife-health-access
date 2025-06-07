@@ -1,17 +1,17 @@
 
 import React from 'react';
 import Navigation from '@/components/Navigation';
-import HeroSection from '@/components/HeroSection';
+import BookingSection from '@/components/BookingSection';
 import Footer from '@/components/Footer';
 
-const Index = () => {
+const Booking = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <HeroSection />
+      <BookingSection />
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default Booking;
