@@ -9,9 +9,13 @@ const MapSection = () => {
     <section className="py-16 bg-white" id="location">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Find Us
-          </h2>
+          <div className="flex items-center justify-center mb-4">
+            <div className="h-1 bg-blue-600 w-12 rounded-full"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mx-4">
+              Find Us
+            </h2>
+            <div className="h-1 bg-blue-600 w-12 rounded-full"></div>
+          </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Visit our flagship clinic in Bishwanath, Sylhet for world-class healthcare services
           </p>

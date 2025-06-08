@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Eye, Pill } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Eye, Pill, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Footer = () => {
   return (
@@ -29,6 +30,19 @@ const Footer = () => {
                 <br />
                 <span className="text-xs">Patients Served</span>
               </div>
+            </div>
+            
+            {/* Social Media */}
+            <div className="flex space-x-4">
+              <Button size="sm" variant="ghost" className="p-2 text-gray-300 hover:text-white hover:bg-gray-800">
+                <Facebook className="h-5 w-5" />
+              </Button>
+              <Button size="sm" variant="ghost" className="p-2 text-gray-300 hover:text-white hover:bg-gray-800">
+                <Instagram className="h-5 w-5" />
+              </Button>
+              <Button size="sm" variant="ghost" className="p-2 text-gray-300 hover:text-white hover:bg-gray-800">
+                <Youtube className="h-5 w-5" />
+              </Button>
             </div>
           </div>
 

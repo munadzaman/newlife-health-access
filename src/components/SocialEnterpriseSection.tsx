@@ -24,11 +24,11 @@ const SocialEnterpriseSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
-            <div className="h-1 bg-gradient-to-r from-blue-600 to-green-600 w-12 rounded-full"></div>
+            <div className="h-1 bg-blue-600 w-12 rounded-full"></div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mx-4">
               Social Enterprise
             </h2>
-            <div className="h-1 bg-gradient-to-r from-green-600 to-blue-600 w-12 rounded-full"></div>
+            <div className="h-1 bg-blue-600 w-12 rounded-full"></div>
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Making world-class healthcare accessible through sustainable business practices and strategic partnerships
@@ -115,7 +115,7 @@ const SocialEnterpriseSection = () => {
           <p className="text-gray-600 mb-6">
             Join our mission to transform healthcare accessibility in Bangladesh through strategic partnerships.
           </p>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
             <ArrowRight className="mr-2 h-4 w-4" />
             Contact Us for Partnership
           </Button>
@@ -148,7 +148,7 @@ const SocialEnterpriseSection = () => {
                 <Heart className="mr-2 h-4 w-4" />
                 Donate Now
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+              <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 font-bold border-white">
                 Become a Monthly Donor
               </Button>
             </div>

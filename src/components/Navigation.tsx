@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Menu, Phone, ChevronDown } from 'lucide-react';
+import { Menu, Phone, ChevronDown, Facebook, Instagram, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -20,14 +20,14 @@ const Navigation = () => {
           <img 
             src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
             alt="Newlife Medical Services" 
-            className="h-20 w-auto"
+            className="h-24 w-auto"
           />
         </div>
 
         {/* Navigation row */}
-        <div className="flex justify-between items-center h-14">
+        <div className="flex justify-between items-center h-16">
           {/* Desktop Navigation Menu */}
-          <div className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
+          <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center">
             <a href="#about" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
               About Us
             </a>
@@ -103,7 +103,7 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <a href="#social-enterprise" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
+            <a href="#social-enterprise" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600 whitespace-nowrap">
               Social Enterprise
             </a>
 
@@ -133,14 +133,27 @@ const Navigation = () => {
             <a href="#team" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
               Our Team
             </a>
-            <a href="#news" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
+            <a href="#news" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600 mr-8">
               News
             </a>
           </div>
 
+          {/* Social Media - Desktop */}
+          <div className="hidden lg:flex items-center space-x-2 mr-4">
+            <Button size="sm" variant="ghost" className="p-2">
+              <Facebook className="h-4 w-4 text-blue-600" />
+            </Button>
+            <Button size="sm" variant="ghost" className="p-2">
+              <Instagram className="h-4 w-4 text-pink-600" />
+            </Button>
+            <Button size="sm" variant="ghost" className="p-2">
+              <Youtube className="h-4 w-4 text-red-600" />
+            </Button>
+          </div>
+
           {/* Action Buttons - Desktop and Mobile */}
           <div className="flex items-center space-x-4">
-            <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white font-medium px-4 py-2 rounded-lg transition-all">
+            <Button variant="outline" className="text-blue-600 border-blue-600 bg-white hover:bg-blue-600 hover:text-white font-medium px-4 py-2 rounded-lg transition-all">
               Patient Portal
             </Button>
             <Button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium">
@@ -170,6 +183,19 @@ const Navigation = () => {
               <a href="#investors" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Investors</a>
               <a href="#team" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Our Team</a>
               <a href="#news" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">News</a>
+              
+              {/* Social Media - Mobile */}
+              <div className="flex justify-center space-x-4 py-3">
+                <Button size="sm" variant="ghost" className="p-2">
+                  <Facebook className="h-4 w-4 text-blue-600" />
+                </Button>
+                <Button size="sm" variant="ghost" className="p-2">
+                  <Instagram className="h-4 w-4 text-pink-600" />
+                </Button>
+                <Button size="sm" variant="ghost" className="p-2">
+                  <Youtube className="h-4 w-4 text-red-600" />
+                </Button>
+              </div>
             </div>
           </div>
         )}
