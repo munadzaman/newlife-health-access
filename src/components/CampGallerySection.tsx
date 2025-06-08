@@ -3,9 +3,15 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Play, Eye, X } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const CampGallerySection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const galleryItems = [
@@ -59,20 +65,25 @@ const CampGallerySection = () => {
 
   return (
     <>
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="shadow-lg">
             <CardHeader className="text-center bg-gradient-to-r from-blue-600 to-green-600 text-white">
               <CardTitle className="text-3xl font-bold flex items-center justify-center">
-                <Eye className="mr-3 h-8 w-8" />
-                Camp Gallery
+                <div className="flex items-center">
+                  <div className="h-1 bg-white w-12 rounded-full mr-4"></div>
+                  <Eye className="mr-3 h-8 w-8" />
+                  Camp Gallery
+                  <div className="h-1 bg-white w-12 rounded-full ml-4"></div>
+                </div>
               </CardTitle>
               <p className="text-xl opacity-90 mt-2">
                 Witness our impact through community outreach and medical camps
               </p>
             </CardHeader>
             <CardContent className="p-8">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+              {/* Desktop Grid View */}
+              <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
                 {galleryItems.map((item, index) => (
                   <div 
                     key={index} 
@@ -97,6 +108,40 @@ const CampGallerySection = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Mobile Carousel View */}
+              <div className="md:hidden mb-8">
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {galleryItems.map((item, index) => (
+                      <CarouselItem key={index} className="basis-1/3 pl-2">
+                        <div 
+                          className="relative cursor-pointer overflow-hidden rounded-lg shadow-md"
+                          onClick={() => handleItemClick(item)}
+                        >
+                          <img 
+                            src={item.src} 
+                            alt={item.title}
+                            className="w-full h-32 object-cover"
+                          />
+                          {item.type === 'video' && (
+                            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
+                              <div className="bg-white bg-opacity-90 rounded-full p-2">
+                                <Play className="h-4 w-4 text-blue-600" />
+                              </div>
+                            </div>
+                          )}
+                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-2">
+                            <h3 className="text-white font-semibold text-xs">{item.title}</h3>
+                          </div>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2" />
+                  <CarouselNext className="right-2" />
+                </Carousel>
               </div>
 
               <div className="text-center">
