@@ -2,45 +2,37 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight, Newspaper } from 'lucide-react';
 
 const NewsSection = () => {
-  const newsItems = [
+  const news = [
     {
-      id: 1,
-      title: "New State-of-the-Art Equipment Arrives at Bishwanath Eye Hospital",
-      excerpt: "We are excited to announce the arrival of advanced diagnostic equipment that will enhance our ability to provide world-class eye care services.",
-      date: "2024-01-15",
-      readTime: "3 min read",
+      title: "Newlife Medical Services Completes 200th Free Cataract Surgery",
+      excerpt: "We are proud to announce reaching this milestone in our mission to make quality healthcare accessible to all Bangladeshi people.",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Equipment"
+      date: "December 15, 2024",
+      category: "Milestone"
     },
     {
-      id: 2,
-      title: "Free Cataract Surgery Camp Reaches 500 Patients Milestone",
-      excerpt: "Our rural outreach program has successfully provided free cataract surgeries to over 500 patients across Bangladesh, transforming lives in underserved communities.",
-      date: "2024-01-10",
-      readTime: "4 min read",
+      title: "New Vision Therapy Program Launches for Children",
+      excerpt: "Our specialized vision therapy program is now available to help children with learning difficulties and visual processing disorders.",
+      image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      date: "December 10, 2024",
+      category: "New Service"
+    },
+    {
+      title: "Partnership with Local NGOs Expands Rural Outreach",
+      excerpt: "We have formed new partnerships to extend our rural medical camps to more remote areas of Sylhet division.",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Community Outreach"
-    },
-    {
-      id: 3,
-      title: "Partnership with BHDI Expands Rural Healthcare Access",
-      excerpt: "Our new partnership with Bangladesh Health Development Initiative will bring comprehensive eye care services to remote villages across Sylhet division.",
-      date: "2024-01-05",
-      readTime: "2 min read",
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      date: "December 5, 2024",
       category: "Partnership"
     },
     {
-      id: 4,
-      title: "Vision Therapy Program Shows Remarkable Success in Children",
-      excerpt: "Our specialized vision therapy program has helped over 200 children with learning difficulties improve their academic performance through enhanced visual skills.",
-      date: "2023-12-28",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Research"
+      title: "Advanced Diagnostic Equipment Installed at Bishwanath Clinic",
+      excerpt: "Our flagship clinic now features state-of-the-art diagnostic equipment to provide even better patient care and accurate diagnoses.",
+      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      date: "November 28, 2024",
+      category: "Technology"
     }
   ];
 
@@ -48,62 +40,54 @@ const NewsSection = () => {
     <section className="py-16 bg-gray-50" id="news">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center">
+            <Newspaper className="mr-3 h-8 w-8 text-blue-600" />
             Latest News & Updates
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay informed about our latest achievements, partnerships, and community impact stories
+            Stay updated with our latest achievements, new services, and community impact stories
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {newsItems.map((news) => (
-            <Card key={news.id} className="hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {news.map((article, index) => (
+            <Card key={index} className="group hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="relative h-48 overflow-hidden">
                 <img 
-                  src={news.image} 
-                  alt={news.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  src={article.image} 
+                  alt={article.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-600 text-white px-2 py-1 rounded text-xs font-medium">
-                    {news.category}
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    {article.category}
                   </span>
                 </div>
               </div>
-              
-              <CardHeader className="p-4">
-                <CardTitle className="text-lg leading-tight mb-2 line-clamp-2">
-                  {news.title}
+              <CardHeader>
+                <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
+                  {article.title}
                 </CardTitle>
-                <CardDescription className="text-sm text-gray-600 line-clamp-3">
-                  {news.excerpt}
+                <CardDescription className="flex items-center text-gray-500">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  {article.date}
                 </CardDescription>
               </CardHeader>
-              
-              <CardContent className="p-4 pt-0">
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="h-4 w-4" />
-                    <span>{new Date(news.date).toLocaleDateString()}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Clock className="h-4 w-4" />
-                    <span>{news.readTime}</span>
-                  </div>
-                </div>
-                
-                <Button variant="outline" size="sm" className="w-full group">
+              <CardContent>
+                <p className="text-gray-600 mb-4 line-clamp-3">
+                  {article.excerpt}
+                </p>
+                <Button variant="outline" className="group-hover:bg-blue-600 group-hover:text-white transition-colors">
                   Read More
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="text-center">
-          <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+        <div className="text-center mt-12">
+          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
             View All News
           </Button>
         </div>

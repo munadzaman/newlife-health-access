@@ -52,33 +52,6 @@ const DoctorsSection = () => {
       achievements: ["Corneal Transplant Expert", "Advanced Surgical Training", "Medical Excellence Award"],
       schedule: "Mon-Fri: 8:00 AM - 4:00 PM",
       specialization: "Corneal Diseases, Transplants"
-    },
-    {
-      name: "Dr. Maria Rodriguez",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      degree: "MBBS, MD (Ophthalmology)",
-      department: "Oculoplastic Surgeon",
-      achievements: ["Aesthetic Surgery Expert", "International Fellowship", "Innovation Award"],
-      schedule: "Tue-Sat: 9:00 AM - 5:00 PM",
-      specialization: "Eyelid Surgery, Reconstructive Surgery"
-    },
-    {
-      name: "Dr. Michael Chen",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      degree: "MBBS, FRCS (Ophthalmology)",
-      department: "Vitreoretinal Surgeon",
-      achievements: ["Retinal Surgery Pioneer", "Research Excellence", "Teaching Award"],
-      schedule: "Mon-Wed-Fri: 10:00 AM - 6:00 PM",
-      specialization: "Retinal Detachment, Macular Surgery"
-    },
-    {
-      name: "Dr. Fatima Al-Zahra",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      degree: "MBBS, MS (Ophthalmology)",
-      department: "Glaucoma Specialist",
-      achievements: ["Glaucoma Research Leader", "Clinical Excellence", "Patient Care Award"],
-      schedule: "Sun-Thu: 8:00 AM - 4:00 PM",
-      specialization: "Glaucoma Management, Laser Therapy"
     }
   ];
 
