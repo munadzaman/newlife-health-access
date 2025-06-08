@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Menu, Search, ChevronDown } from 'lucide-react';
+import { Menu, Phone, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -8,7 +8,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Input } from '@/components/ui/input';
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,41 +15,19 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* First row with logo and search */}
+        {/* Single row with logo, menus, and call button */}
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
               src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
               alt="Newlife Medical Services" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
           </div>
 
-          {/* Search */}
-          <div className="hidden md:flex items-center">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              <Input 
-                placeholder="Search..." 
-                className="pl-10 w-64 border-gray-300 focus:border-blue-600 focus:ring-blue-600"
-              />
-            </div>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            className="lg:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            <Menu className="h-6 w-6" />
-          </Button>
-        </div>
-
-        {/* Second row with navigation menu */}
-        <div className="hidden lg:flex items-center justify-between h-16 border-t border-gray-100">
-          <div className="flex items-center space-x-6">
+          {/* Desktop Navigation Menu */}
+          <div className="hidden lg:flex items-center space-x-6">
             <a href="#about" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
               About Us
             </a>
@@ -129,9 +106,7 @@ const Navigation = () => {
             <a href="#social-enterprise" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
               Social Enterprise
             </a>
-          </div>
 
-          <div className="flex items-center space-x-6">
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
                 Digital Services <ChevronDown className="ml-1 h-4 w-4" />
@@ -165,6 +140,23 @@ const Navigation = () => {
               Patient Portal
             </Button>
           </div>
+
+          {/* Call Us Button */}
+          <div className="hidden md:flex items-center">
+            <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium">
+              <Phone className="mr-2 h-4 w-4" />
+              Call Us
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            className="lg:hidden p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <Menu className="h-6 w-6" />
+          </Button>
         </div>
 
         {/* Mobile Menu */}
@@ -180,6 +172,10 @@ const Navigation = () => {
               <a href="#news" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">News</a>
               <Button variant="outline" className="mx-3 my-2 text-blue-600 border-blue-600 w-full">
                 Patient Portal
+              </Button>
+              <Button className="mx-3 my-2 bg-green-600 hover:bg-green-700 text-white w-full">
+                <Phone className="mr-2 h-4 w-4" />
+                Call Us
               </Button>
             </div>
           </div>

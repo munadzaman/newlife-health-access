@@ -6,8 +6,8 @@ import ClinicsSection from '@/components/ClinicsSection';
 import ServicesSection from '@/components/ServicesSection';
 import DoctorsSection from '@/components/DoctorsSection';
 import AboutSection from '@/components/AboutSection';
-import CampGallerySection from '@/components/CampGallerySection';
 import SocialEnterpriseSection from '@/components/SocialEnterpriseSection';
+import CampGallerySection from '@/components/CampGallerySection';
 import InvestorsSection from '@/components/InvestorsSection';
 import TeamSection from '@/components/TeamSection';
 import NewsSection from '@/components/NewsSection';
@@ -25,8 +25,8 @@ const Index = () => {
       <ServicesSection />
       <DoctorsSection />
       <BookingSection />
-      <CampGallerySection />
       <SocialEnterpriseSection />
+      <CampGallerySection />
       <InvestorsSection />
       <TeamSection />
       <NewsSection />

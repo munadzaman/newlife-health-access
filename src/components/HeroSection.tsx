@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
+import { MapPin, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -78,8 +78,8 @@ const HeroSection = () => {
 
               <div className="flex flex-col md:flex-row gap-4 justify-center">
                 <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 shadow-lg">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Book Appointment
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Book on WhatsApp
                 </Button>
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 shadow-lg">
                   <MapPin className="mr-2 h-5 w-5" />

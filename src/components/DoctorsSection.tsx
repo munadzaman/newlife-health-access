@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -82,10 +81,14 @@ const DoctorsSection = () => {
     }
   ];
 
-  const visibleDoctors = 3;
-  const maxIndex = Math.max(0, doctors.length - visibleDoctors);
+  // Mobile: 1 doctor, Desktop: 3 doctors
+  const visibleDoctorsDesktop = 3;
+  const visibleDoctorsMobile = 1;
+  const maxIndexDesktop = Math.max(0, doctors.length - visibleDoctorsDesktop);
+  const maxIndexMobile = Math.max(0, doctors.length - visibleDoctorsMobile);
 
   const nextSlide = () => {
+    const maxIndex = window.innerWidth < 768 ? maxIndexMobile : maxIndexDesktop;
     setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
   };
 
@@ -109,10 +112,12 @@ const DoctorsSection = () => {
           <div className="overflow-hidden">
             <div 
               className="flex transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * (100 / visibleDoctors)}%)` }}
+              style={{ 
+                transform: `translateX(-${currentIndex * (window.innerWidth < 768 ? 100 : 100 / visibleDoctorsDesktop)}%)` 
+              }}
             >
               {doctors.map((doctor, index) => (
-                <div key={index} className="w-1/3 flex-shrink-0 px-3">
+                <div key={index} className="w-full md:w-1/3 flex-shrink-0 px-3">
                   <Card className="h-full hover:shadow-xl transition-shadow duration-300">
                     <CardHeader className="text-center">
                       <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100">
@@ -183,7 +188,7 @@ const DoctorsSection = () => {
           </button>
           <button
             onClick={nextSlide}
-            disabled={currentIndex >= maxIndex}
+            disabled={currentIndex >= (window.innerWidth < 768 ? maxIndexMobile : maxIndexDesktop)}
             className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-2 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
           >
             <ChevronRight className="h-6 w-6 text-gray-600" />
