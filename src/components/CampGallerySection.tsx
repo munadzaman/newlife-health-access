@@ -68,7 +68,7 @@ const CampGallerySection = () => {
       <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="shadow-lg">
-            <CardHeader className="text-center bg-gradient-to-r from-blue-600 to-green-600 text-white">
+            <CardHeader className="text-center bg-blue-600 text-white">
               <CardTitle className="text-3xl font-bold flex items-center justify-center">
                 <div className="flex items-center">
                   <div className="h-1 bg-white w-12 rounded-full mr-4"></div>
@@ -83,7 +83,7 @@ const CampGallerySection = () => {
             </CardHeader>
             <CardContent className="p-8">
               {/* Desktop Grid View */}
-              <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+              <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
                 {galleryItems.map((item, index) => (
                   <div 
                     key={index} 
@@ -110,7 +110,7 @@ const CampGallerySection = () => {
                 ))}
               </div>
 
-              {/* Mobile Carousel View */}
+              {/* Mobile Carousel View - Show 3 at a time */}
               <div className="md:hidden mb-8">
                 <Carousel className="w-full">
                   <CarouselContent>
@@ -145,7 +145,7 @@ const CampGallerySection = () => {
               </div>
 
               <div className="text-center">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-3">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
                   View More Gallery
                 </Button>
               </div>

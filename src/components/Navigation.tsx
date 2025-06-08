@@ -15,19 +15,19 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Single row with logo, menus, and call button */}
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <img 
-              src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
-              alt="Newlife Medical Services" 
-              className="h-16 w-auto"
-            />
-          </div>
+        {/* Logo centered at top */}
+        <div className="flex justify-center py-2 border-b border-gray-50">
+          <img 
+            src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
+            alt="Newlife Medical Services" 
+            className="h-20 w-auto"
+          />
+        </div>
 
+        {/* Navigation row */}
+        <div className="flex justify-between items-center h-14">
           {/* Desktop Navigation Menu */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
             <a href="#about" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
               About Us
             </a>
@@ -136,14 +136,14 @@ const Navigation = () => {
             <a href="#news" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
               News
             </a>
-            <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white font-medium px-6 py-2 rounded-lg transition-all">
-              Patient Portal
-            </Button>
           </div>
 
-          {/* Call Us Button */}
-          <div className="hidden md:flex items-center">
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium">
+          {/* Action Buttons - Desktop and Mobile */}
+          <div className="flex items-center space-x-4">
+            <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white font-medium px-4 py-2 rounded-lg transition-all">
+              Patient Portal
+            </Button>
+            <Button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium">
               <Phone className="mr-2 h-4 w-4" />
               Call Us
             </Button>
@@ -152,7 +152,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 ml-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <Menu className="h-6 w-6" />
@@ -170,13 +170,6 @@ const Navigation = () => {
               <a href="#investors" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Investors</a>
               <a href="#team" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">Our Team</a>
               <a href="#news" className="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium">News</a>
-              <Button variant="outline" className="mx-3 my-2 text-blue-600 border-blue-600 w-full">
-                Patient Portal
-              </Button>
-              <Button className="mx-3 my-2 bg-green-600 hover:bg-green-700 text-white w-full">
-                <Phone className="mr-2 h-4 w-4" />
-                Call Us
-              </Button>
             </div>
           </div>
         )}
