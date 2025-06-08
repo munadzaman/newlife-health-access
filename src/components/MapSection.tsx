@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { MapPin, Phone, Clock, Mail, Facebook, Instagram, Youtube } from 'lucide-react';
+import { MapPin, Phone, Clock, Mail, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const MapSection = () => {
@@ -92,6 +91,10 @@ const MapSection = () => {
               <Button size="sm" variant="outline" className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white">
                 <Youtube className="h-4 w-4 mr-2" />
                 YouTube
+              </Button>
+              <Button size="sm" variant="outline" className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white">
+                <Linkedin className="h-4 w-4 mr-2" />
+                LinkedIn
               </Button>
             </div>
           </div>

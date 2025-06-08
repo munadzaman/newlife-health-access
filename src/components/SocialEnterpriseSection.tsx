@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, Users, Building2, Handshake, ArrowRight } from 'lucide-react';
+import { Heart, Users, Building2, Handshake, ArrowRight, MapPin } from 'lucide-react';
 
 const SocialEnterpriseSection = () => {
   const partners = [
@@ -97,15 +97,26 @@ const SocialEnterpriseSection = () => {
               ))}
             </div>
 
-            <div className="space-y-3">
-              <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-                <Heart className="mr-2 h-4 w-4" />
-                Sponsor Cataract Surgery
-              </Button>
-              <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
-                <Users className="mr-2 h-4 w-4" />
-                Support Medical Camps
-              </Button>
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center space-x-3 text-gray-700">
+                <Heart className="h-4 w-4 text-green-600" />
+                <span className="text-sm">Supporting Cataract Surgery</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-700">
+                <Users className="h-4 w-4 text-blue-600" />
+                <span className="text-sm">Supporting Medical Camps</span>
+              </div>
+            </div>
+
+            {/* Eye Camp Location Card */}
+            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+              <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
+                <MapPin className="mr-2 h-4 w-4 text-blue-600" />
+                Looking for Eye Camp Location?
+              </h4>
+              <p className="text-sm text-gray-600">
+                We conduct eye camps in any house, school, madrasha, union parishad, bazar, pharmacy etc.
+              </p>
             </div>
           </div>
         </div>
@@ -131,16 +142,16 @@ const SocialEnterpriseSection = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
               <div className="bg-white bg-opacity-20 p-4 rounded-lg backdrop-blur-sm">
-                <h4 className="font-bold text-lg">£50</h4>
+                <h4 className="font-bold text-lg">৳300</h4>
                 <p className="text-sm">Complete eye examination</p>
               </div>
               <div className="bg-white bg-opacity-20 p-4 rounded-lg backdrop-blur-sm">
-                <h4 className="font-bold text-lg">£200</h4>
+                <h4 className="font-bold text-lg">৳6,000</h4>
                 <p className="text-sm">Life-changing cataract surgery</p>
               </div>
               <div className="bg-white bg-opacity-20 p-4 rounded-lg backdrop-blur-sm">
-                <h4 className="font-bold text-lg">£500</h4>
-                <p className="text-sm">Full rural medical camp</p>
+                <h4 className="font-bold text-lg">৳30,000+</h4>
+                <p className="text-sm">Full free rural medical camp for free eye screening and free glass free medicine</p>
               </div>
             </div>
             <div className="space-y-3 md:space-y-0 md:space-x-4 md:flex md:justify-center">

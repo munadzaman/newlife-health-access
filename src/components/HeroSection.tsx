@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { MapPin, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,13 +23,13 @@ const HeroSection = () => {
       title: "Rural Outreach Camps",
       subtitle: "Bringing healthcare to your doorstep across Bangladesh",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-      stat: "1000+ Patients Served"
+      stat: "3000+ Patients Served"
     },
     {
       title: "Vision Therapy Excellence",
       subtitle: "Personalized programs for better eye-brain coordination",
       image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-      stat: "4 Clinic Locations"
+      stat: "Excellence in Care"
     }
   ];
 
@@ -76,14 +76,10 @@ const HeroSection = () => {
                 <div className="text-3xl font-bold text-green-400 drop-shadow-lg">{slide.stat}</div>
               </div>
 
-              <div className="flex flex-col md:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 shadow-lg">
                   <MessageCircle className="mr-2 h-5 w-5" />
                   Book on WhatsApp
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 shadow-lg">
-                  <MapPin className="mr-2 h-5 w-5" />
-                  Find Our Clinics
                 </Button>
               </div>
             </div>
@@ -96,13 +92,17 @@ const HeroSection = () => {
         onClick={prevSlide}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all backdrop-blur-sm"
       >
-        <ChevronLeft className="h-6 w-6" />
+        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
       </button>
       <button
         onClick={nextSlide}
         className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all backdrop-blur-sm"
       >
-        <ChevronRight className="h-6 w-6" />
+        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
       </button>
 
       {/* Slide Indicators */}
