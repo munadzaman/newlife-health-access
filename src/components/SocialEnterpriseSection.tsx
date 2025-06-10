@@ -19,6 +19,13 @@ const SocialEnterpriseSection = () => {
     }
   ];
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('booking');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="social-enterprise" className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,26 +107,38 @@ const SocialEnterpriseSection = () => {
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3 text-gray-700">
                 <Heart className="h-4 w-4 text-green-600" />
-                <span className="text-sm">Supporting with Cataract Surgery</span>
+                <span className="text-sm">Sponsoring Cataract Surgery</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-700">
                 <Users className="h-4 w-4 text-blue-600" />
-                <span className="text-sm">Supporting with Medical Camps</span>
+                <span className="text-sm">Supporting Medical Camps</span>
               </div>
             </div>
 
             {/* Updated Eye Camp Location Card */}
-            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-              <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                <MapPin className="mr-2 h-4 w-4 text-blue-600" />
-                Looking for Eye Camp Location?
+            <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+              <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                <MapPin className="mr-2 h-5 w-5 text-blue-600" />
+                Want to Host an Eye Camp in Your Area?
               </h4>
+              <p className="text-sm text-gray-700 mb-3">
+                <strong>We're truly excited to partner with you!</strong>
+              </p>
               <p className="text-sm text-gray-600 mb-3">
-                Our hospital is looking for camp space in crowded areas. We provide eye camps with lowest registration fees, modern equipment, medicine, glasses and tests at the most affordable prices possible.
+                Our eye camps bring modern equipment, expert eye tests, medicines, and affordable glasses — all at the lowest registration fees to ensure access for everyone.
               </p>
-              <p className="text-sm text-gray-700 font-medium">
-                We encourage hosts to donate as sadaqah for this noble cause.
+              <p className="text-sm text-gray-600 mb-4">
+                By hosting a camp, you're not just providing care — you're making a lasting impact. We also invite you to contribute as Sadaqah for this noble cause.
               </p>
+              <p className="text-sm text-gray-700 font-medium mb-3">
+                Ready to make a difference?
+              </p>
+              <Button 
+                onClick={scrollToContact}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                Contact Us
+              </Button>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Menu, Phone, ChevronDown, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -21,14 +22,14 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header with logo and social media on same level */}
-        <div className="flex justify-between items-center py-3 border-b border-gray-50">
+        {/* Header with logo and social media on same level - reduced padding */}
+        <div className="flex justify-between items-center py-2 border-b border-gray-50">
           {/* Logo */}
           <div className="flex-1">
             <img 
               src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
               alt="Newlife Medical Services" 
-              className="h-16 w-auto"
+              className="h-12 w-auto"
             />
           </div>
           
@@ -49,8 +50,8 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* Navigation row */}
-        <div className="flex justify-between items-center h-16">
+        {/* Navigation row - reduced height */}
+        <div className="flex justify-between items-center h-12">
           {/* Desktop Navigation Menu */}
           <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center">
             <a href="#about" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
