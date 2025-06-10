@@ -100,22 +100,25 @@ const SocialEnterpriseSection = () => {
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3 text-gray-700">
                 <Heart className="h-4 w-4 text-green-600" />
-                <span className="text-sm">Supporting Cataract Surgery</span>
+                <span className="text-sm">Supporting with Cataract Surgery</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-700">
                 <Users className="h-4 w-4 text-blue-600" />
-                <span className="text-sm">Supporting Medical Camps</span>
+                <span className="text-sm">Supporting with Medical Camps</span>
               </div>
             </div>
 
-            {/* Eye Camp Location Card */}
+            {/* Updated Eye Camp Location Card */}
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
               <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
                 <MapPin className="mr-2 h-4 w-4 text-blue-600" />
                 Looking for Eye Camp Location?
               </h4>
-              <p className="text-sm text-gray-600">
-                We conduct eye camps in any house, school, madrasha, union parishad, bazar, pharmacy etc.
+              <p className="text-sm text-gray-600 mb-3">
+                Our hospital is looking for camp space in crowded areas. We provide eye camps with lowest registration fees, modern equipment, medicine, glasses and tests at the most affordable prices possible.
+              </p>
+              <p className="text-sm text-gray-700 font-medium">
+                We encourage hosts to donate as sadaqah for this noble cause.
               </p>
             </div>
           </div>

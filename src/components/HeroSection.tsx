@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Mail } from 'lucide-react';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -48,6 +48,13 @@ const HeroSection = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const scrollToBooking = () => {
+    const bookingSection = document.getElementById('booking');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative h-screen overflow-hidden">
       {slides.map((slide, index) => (
@@ -76,10 +83,22 @@ const HeroSection = () => {
                 <div className="text-3xl font-bold text-green-400 drop-shadow-lg">{slide.stat}</div>
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 shadow-lg">
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  Book on WhatsApp
+                  Book an Appointment on WhatsApp
+                </Button>
+                
+                <div className="text-white font-medium">Or</div>
+                
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="bg-white bg-opacity-20 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 shadow-lg backdrop-blur-sm"
+                  onClick={scrollToBooking}
+                >
+                  <Mail className="mr-2 h-5 w-5" />
+                  Book Online Through Email
                 </Button>
               </div>
             </div>

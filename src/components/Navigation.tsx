@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, Phone, ChevronDown, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -12,11 +11,28 @@ import {
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const scrollToBooking = () => {
+    const bookingSection = document.getElementById('booking');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top bar with social media */}
-        <div className="flex justify-end py-2 border-b border-gray-50">
+        {/* Header with logo and social media on same level */}
+        <div className="flex justify-between items-center py-3 border-b border-gray-50">
+          {/* Logo */}
+          <div className="flex-1">
+            <img 
+              src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
+              alt="Newlife Medical Services" 
+              className="h-16 w-auto"
+            />
+          </div>
+          
+          {/* Social Media Icons */}
           <div className="flex items-center space-x-2">
             <Button size="sm" variant="ghost" className="p-2">
               <Facebook className="h-4 w-4 text-blue-600" />
@@ -33,19 +49,10 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* Logo centered */}
-        <div className="flex justify-center py-2 border-b border-gray-50">
-          <img 
-            src="/lovable-uploads/d6a71aba-9903-4ad4-9ede-4f3138ae654d.png" 
-            alt="Newlife Medical Services" 
-            className="h-24 w-auto"
-          />
-        </div>
-
         {/* Navigation row */}
         <div className="flex justify-between items-center h-16">
           {/* Desktop Navigation Menu */}
-          <div className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
+          <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center">
             <a href="#about" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
               About Us
             </a>
@@ -157,11 +164,11 @@ const Navigation = () => {
           </div>
 
           {/* Action Buttons - Desktop and Mobile */}
-          <div className="flex items-center space-x-6">
-            <Button variant="outline" className="text-blue-600 border-blue-600 bg-white hover:bg-blue-600 hover:text-white font-medium px-6 py-2 rounded-lg transition-all">
+          <div className="flex items-center space-x-4">
+            <Button variant="outline" className="text-blue-600 border-blue-600 bg-white hover:bg-blue-600 hover:text-white font-medium px-4 py-2 rounded-lg transition-all">
               Patient Portal
             </Button>
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium">
+            <Button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium">
               <Phone className="mr-2 h-4 w-4" />
               Call Us
             </Button>
