@@ -56,35 +56,35 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-[calc(100vh-96px)] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          className={`absolute inset-0 transition-all duration-1000 ${
+            index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
           }`}
         >
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-1000"
             style={{ backgroundImage: `url(${slide.image})` }}
           />
           <div className="absolute inset-0 bg-black bg-opacity-50" />
           
           <div className="relative h-full flex items-center justify-center text-white">
-            <div className="text-center max-w-4xl px-4">
-              <h1 className="text-3xl md:text-5xl font-bold mb-4 animate-fade-in drop-shadow-2xl">
+            <div className="text-center max-w-4xl px-4 animate-fade-in">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-2xl transition-all duration-500 hover:scale-105">
                 {slide.title}
               </h1>
-              <p className="text-lg md:text-xl mb-6 opacity-90 drop-shadow-lg">
+              <p className="text-lg md:text-xl mb-6 opacity-90 drop-shadow-lg transition-all duration-300">
                 {slide.subtitle}
               </p>
               
-              <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 mb-6 max-w-md mx-auto border border-white border-opacity-30">
+              <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 mb-6 max-w-md mx-auto border border-white border-opacity-30 transition-all duration-300 hover:bg-opacity-30">
                 <div className="text-2xl font-bold text-green-400 drop-shadow-lg">{slide.stat}</div>
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 shadow-lg">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
                   <MessageCircle className="mr-2 h-4 w-4" />
                   Book an Appointment on WhatsApp
                 </Button>
@@ -94,7 +94,7 @@ const HeroSection = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="bg-white bg-opacity-20 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-2 shadow-lg backdrop-blur-sm"
+                  className="bg-white bg-opacity-20 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-2 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-xl"
                   onClick={scrollToBooking}
                 >
                   <Mail className="mr-2 h-4 w-4" />
@@ -109,7 +109,7 @@ const HeroSection = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all backdrop-blur-sm"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110"
       >
         <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -117,7 +117,7 @@ const HeroSection = () => {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all backdrop-blur-sm"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110"
       >
         <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -130,7 +130,7 @@ const HeroSection = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
+            className={`w-2 h-2 rounded-full transition-all duration-300 hover:scale-125 ${
               index === currentSlide ? 'bg-white' : 'bg-white bg-opacity-50'
             }`}
           />
