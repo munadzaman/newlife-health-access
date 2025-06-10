@@ -10,6 +10,7 @@ const DoctorsSection = () => {
       qualifications: "MBBS, FCPS (Eye)",
       specializations: ["Cataract Surgery", "Retinal Diseases", "Glaucoma Treatment"],
       experience: "15+ years",
+      availability: "",
       image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
@@ -18,6 +19,7 @@ const DoctorsSection = () => {
       qualifications: "MBBS, DO(BSMMU), FCPS(Eye)",
       specializations: ["Phaco Surgery", "Corneal Diseases", "Pediatric Eye Care"],
       experience: "12+ years",
+      availability: "Available on Sunday",
       image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
@@ -26,7 +28,17 @@ const DoctorsSection = () => {
       qualifications: "MBBS, MS (Ophthalmology)",
       specializations: ["Advanced Eye Surgery", "Diabetic Retinopathy", "Macular Diseases"],
       experience: "18+ years",
+      availability: "",
       image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Shohel Rana",
+      designation: "Optometrist",
+      qualifications: "Diploma in Optometry",
+      specializations: ["Contact Lens", "Vision Therapy"],
+      experience: "8+ years",
+      availability: "Available on Sunday",
+      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
 
@@ -46,7 +58,7 @@ const DoctorsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {doctors.map((doctor, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="relative">
@@ -73,6 +85,12 @@ const DoctorsSection = () => {
                     <Award className="h-4 w-4 mr-2 text-green-600" />
                     <span className="text-sm">{doctor.experience} Experience</span>
                   </div>
+                  {doctor.availability && (
+                    <div className="flex items-center text-gray-700">
+                      <Clock className="h-4 w-4 mr-2 text-orange-600" />
+                      <span className="text-sm text-orange-600 font-medium">{doctor.availability}</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="mb-4">

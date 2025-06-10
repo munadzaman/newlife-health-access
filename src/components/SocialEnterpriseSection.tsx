@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart, Users, Building2, Handshake, ArrowRight, MapPin } from 'lucide-react';
@@ -19,10 +18,10 @@ const SocialEnterpriseSection = () => {
     }
   ];
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('booking');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToFindUs = () => {
+    const findUsSection = document.getElementById('map');
+    if (findUsSection) {
+      findUsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -115,7 +114,6 @@ const SocialEnterpriseSection = () => {
               </div>
             </div>
 
-            {/* Updated Eye Camp Location Card */}
             <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
               <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
                 <MapPin className="mr-2 h-5 w-5 text-blue-600" />
@@ -134,7 +132,7 @@ const SocialEnterpriseSection = () => {
                 Ready to make a difference?
               </p>
               <Button 
-                onClick={scrollToContact}
+                onClick={scrollToFindUs}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white"
               >
                 Contact Us
@@ -148,13 +146,12 @@ const SocialEnterpriseSection = () => {
           <p className="text-gray-600 mb-6">
             Join our mission to transform healthcare accessibility in Bangladesh through strategic partnerships.
           </p>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white" onClick={scrollToFindUs}>
             <ArrowRight className="mr-2 h-4 w-4" />
             Contact Us for Partnership
           </Button>
         </div>
 
-        {/* Enhanced Donation Appeal */}
         <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white p-8 rounded-lg shadow-lg">
           <div className="text-center">
             <Heart className="h-16 w-16 mx-auto mb-6 text-white" />

@@ -56,7 +56,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-[70vh] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -72,20 +72,20 @@ const HeroSection = () => {
           
           <div className="relative h-full flex items-center justify-center text-white">
             <div className="text-center max-w-4xl px-4">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in drop-shadow-2xl">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 animate-fade-in drop-shadow-2xl">
                 {slide.title}
               </h1>
-              <p className="text-xl md:text-2xl mb-8 opacity-90 drop-shadow-lg">
+              <p className="text-lg md:text-xl mb-6 opacity-90 drop-shadow-lg">
                 {slide.subtitle}
               </p>
               
-              <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-6 mb-8 max-w-md mx-auto border border-white border-opacity-30">
-                <div className="text-3xl font-bold text-green-400 drop-shadow-lg">{slide.stat}</div>
+              <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 mb-6 max-w-md mx-auto border border-white border-opacity-30">
+                <div className="text-2xl font-bold text-green-400 drop-shadow-lg">{slide.stat}</div>
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 shadow-lg">
-                  <MessageCircle className="mr-2 h-5 w-5" />
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 shadow-lg">
+                  <MessageCircle className="mr-2 h-4 w-4" />
                   Book an Appointment on WhatsApp
                 </Button>
                 
@@ -94,10 +94,10 @@ const HeroSection = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="bg-white bg-opacity-20 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 shadow-lg backdrop-blur-sm"
+                  className="bg-white bg-opacity-20 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-2 shadow-lg backdrop-blur-sm"
                   onClick={scrollToBooking}
                 >
-                  <Mail className="mr-2 h-5 w-5" />
+                  <Mail className="mr-2 h-4 w-4" />
                   Book Online Through Email
                 </Button>
               </div>
@@ -111,7 +111,7 @@ const HeroSection = () => {
         onClick={prevSlide}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all backdrop-blur-sm"
       >
-        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
@@ -119,18 +119,18 @@ const HeroSection = () => {
         onClick={nextSlide}
         className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all backdrop-blur-sm"
       >
-        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
+            className={`w-2 h-2 rounded-full transition-all ${
               index === currentSlide ? 'bg-white' : 'bg-white bg-opacity-50'
             }`}
           />

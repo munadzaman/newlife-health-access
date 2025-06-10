@@ -1,6 +1,8 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { TrendingUp, Shield, Globe, Target, Heart } from 'lucide-react';
 
 const InvestorsSection = () => {
@@ -8,10 +10,10 @@ const InvestorsSection = () => {
     fullName: '',
     email: '',
     telephone: '',
-    investmentAmount: ''
+    message: ''
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -132,15 +134,15 @@ const InvestorsSection = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Investment Amount (USD) *</label>
-                <Input
-                  type="number"
-                  name="investmentAmount"
-                  value={formData.investmentAmount}
+                <label className="block text-sm font-medium mb-2">Message *</label>
+                <Textarea
+                  name="message"
+                  value={formData.message}
                   onChange={handleInputChange}
                   required
                   className="w-full"
-                  placeholder="e.g., 50000"
+                  placeholder="Write your message here"
+                  rows={4}
                 />
               </div>
 

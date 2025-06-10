@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Globe, Award } from 'lucide-react';
 import {
@@ -141,6 +140,13 @@ const TeamSection = () => {
       category: "Operational Team",
       bio: "Dedicated nursing graduate committed to quality patient care",
       image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Redwan Ahmed",
+      position: "Office Assistant",
+      category: "Operational Team",
+      bio: "Dedicated office assistant supporting daily operations and patient services",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
 
