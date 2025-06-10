@@ -56,7 +56,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-[70vh] overflow-hidden">
+    <section className="relative h-screen overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}

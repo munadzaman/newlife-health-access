@@ -36,7 +36,9 @@ const Navigation = () => {
           {/* Social Media Icons */}
           <div className="flex items-center space-x-2">
             <Button size="sm" variant="ghost" className="p-2">
-              <Facebook className="h-4 w-4 text-blue-600" />
+              <a href="https://www.facebook.com/NewlifeMedicalServices/" target="_blank" rel="noopener noreferrer">
+                <Facebook className="h-4 w-4 text-blue-600" />
+              </a>
             </Button>
             <Button size="sm" variant="ghost" className="p-2">
               <Instagram className="h-4 w-4 text-pink-600" />
@@ -45,13 +47,15 @@ const Navigation = () => {
               <Youtube className="h-4 w-4 text-red-600" />
             </Button>
             <Button size="sm" variant="ghost" className="p-2">
-              <Linkedin className="h-4 w-4 text-blue-700" />
+              <a href="https://www.linkedin.com/company/newlife-medical-services/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-4 w-4 text-blue-700" />
+              </a>
             </Button>
           </div>
         </div>
 
         {/* Navigation row - reduced height */}
-        <div className="flex justify-between items-center h-12">
+        <div className="flex justify-between items-center h-10">
           {/* Desktop Navigation Menu */}
           <div className="hidden lg:flex items-center space-x-6 flex-1 justify-center">
             <a href="#about" className="text-gray-800 hover:text-blue-600 transition-colors font-medium py-2 px-1 border-b-2 border-transparent hover:border-blue-600">
@@ -165,13 +169,13 @@ const Navigation = () => {
           </div>
 
           {/* Action Buttons - Desktop and Mobile */}
-          <div className="flex items-center space-x-4">
-            <Button variant="outline" className="text-blue-600 border-blue-600 bg-white hover:bg-blue-600 hover:text-white font-medium px-4 py-2 rounded-lg transition-all">
+          <div className="flex items-center space-x-2">
+            <Button variant="outline" size="sm" className="text-blue-600 border-blue-600 bg-white hover:bg-blue-600 hover:text-white font-medium px-3 py-1 rounded-lg transition-all">
               Patient Portal
             </Button>
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium">
-              <Phone className="mr-2 h-4 w-4" />
-              Call Us
+            <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-lg font-medium">
+              <Phone className="mr-1 h-3 w-3" />
+              Call +8801324488520
             </Button>
           </div>
 

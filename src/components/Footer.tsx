@@ -35,7 +35,9 @@ const Footer = () => {
             {/* Social Media */}
             <div className="flex space-x-4">
               <Button size="sm" variant="ghost" className="p-2 text-gray-300 hover:text-white hover:bg-gray-800">
-                <Facebook className="h-5 w-5" />
+                <a href="https://www.facebook.com/NewlifeMedicalServices/" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="h-5 w-5" />
+                </a>
               </Button>
               <Button size="sm" variant="ghost" className="p-2 text-gray-300 hover:text-white hover:bg-gray-800">
                 <Instagram className="h-5 w-5" />
@@ -44,7 +46,9 @@ const Footer = () => {
                 <Youtube className="h-5 w-5" />
               </Button>
               <Button size="sm" variant="ghost" className="p-2 text-gray-300 hover:text-white hover:bg-gray-800">
-                <Linkedin className="h-5 w-5" />
+                <a href="https://www.linkedin.com/company/newlife-medical-services/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>
@@ -120,7 +124,7 @@ const Footer = () => {
                 <Phone className="h-5 w-5 text-green-400" />
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-sm">+880 1XXX-XXXXXX</p>
+                  <p className="text-sm">+8801324488520</p>
                 </div>
               </div>
               
