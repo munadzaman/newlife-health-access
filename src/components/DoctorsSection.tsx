@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Star, Award, Clock, Users, ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 
@@ -58,15 +57,15 @@ const DoctorsSection = () => {
   };
 
   return (
-    <section id="doctors" className="py-16 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
+    <section id="doctors" className="py-16 bg-gradient-to-br from-green-50 to-blue-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-fade-in">
-          <div className="flex items-center justify-center mb-6">
-            <div className="h-1 bg-gradient-to-r from-blue-600 to-green-600 w-16 rounded-full animate-scale-in"></div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent mx-4 transition-all duration-300">
-              Our Expert Doctors
+          <div className="flex items-center justify-center mb-4">
+            <div className="h-1 bg-gradient-to-r from-blue-600 to-green-600 w-12 rounded-full"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mx-4">
+              Our Doctors
             </h2>
-            <div className="h-1 bg-gradient-to-r from-green-600 to-blue-600 w-16 rounded-full animate-scale-in"></div>
+            <div className="h-1 bg-gradient-to-r from-green-600 to-blue-600 w-12 rounded-full"></div>
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Meet our team of highly qualified and experienced ophthalmologists dedicated to providing the best eye care services

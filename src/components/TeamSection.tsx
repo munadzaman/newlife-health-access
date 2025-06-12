@@ -151,7 +151,7 @@ const TeamSection = () => {
   ];
 
   const TeamCard = ({ member }: { member: any }) => (
-    <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+    <div className="bg-card/80 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-border">
       <div className="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden">
         <img 
           src={member.image} 
@@ -159,14 +159,14 @@ const TeamSection = () => {
           className="w-full h-full object-cover"
         />
       </div>
-      <h3 className="text-lg font-bold text-gray-900 text-center mb-2">{member.name}</h3>
+      <h3 className="text-lg font-bold text-card-foreground text-center mb-2">{member.name}</h3>
       <p className="text-blue-600 font-medium text-center mb-3">{member.position}</p>
-      <p className="text-gray-600 text-sm text-center">{member.bio}</p>
+      <p className="text-muted-foreground text-sm text-center">{member.bio}</p>
     </div>
   );
 
   return (
-    <section id="team" className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
+    <section id="team" className="py-16 bg-gradient-to-br from-green-50 to-blue-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
