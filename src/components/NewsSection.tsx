@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -45,12 +44,16 @@ const NewsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50" id="news">
+    <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50 shadow-lg" id="news">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Latest News & Updates
-          </h2>
+          <div className="flex items-center justify-center mb-4">
+            <div className="h-1 bg-gradient-to-r from-blue-600 to-green-600 w-12 rounded-full"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mx-4">
+              Latest News & Updates
+            </h2>
+            <div className="h-1 bg-gradient-to-r from-green-600 to-blue-600 w-12 rounded-full"></div>
+          </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Stay informed about our latest achievements, partnerships, and community impact stories
           </p>

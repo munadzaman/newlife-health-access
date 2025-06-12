@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, Users, Building2, Handshake, ArrowRight, MapPin, Target, Globe, Shield } from 'lucide-react';
+import { Heart, Users, Building2, Handshake, ArrowRight, MapPin, Target } from 'lucide-react';
 
 const SocialEnterpriseSection = () => {
   const partners = [
@@ -27,174 +27,140 @@ const SocialEnterpriseSection = () => {
   };
 
   return (
-    <section id="social-enterprise" className="py-16 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
+    <section id="social-enterprise" className="py-16 bg-gradient-to-br from-green-50 to-blue-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <div className="flex items-center justify-center mb-6">
-            <div className="h-1 bg-gradient-to-r from-blue-600 to-green-600 w-16 rounded-full animate-scale-in"></div>
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent mx-4 transition-all duration-300">
+          <div className="flex items-center justify-center mb-4">
+            <div className="h-1 bg-gradient-to-r from-blue-600 to-green-600 w-12 rounded-full"></div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mx-4">
               Social Enterprise
             </h2>
-            <div className="h-1 bg-gradient-to-r from-green-600 to-blue-600 w-16 rounded-full animate-scale-in"></div>
+            <div className="h-1 bg-gradient-to-r from-green-600 to-blue-600 w-12 rounded-full"></div>
           </div>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Making world-class healthcare accessible through sustainable business practices and strategic partnerships
           </p>
         </div>
 
-        {/* Mission Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="group">
-            <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-blue-300 h-full animate-slide-up">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-4 rounded-full w-16 h-16 mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+        {/* Mission Statement */}
+        <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border mb-12 animate-fade-in">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="group">
+              <div className="bg-blue-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Building2 className="h-8 w-8 text-blue-600 mx-auto" />
               </div>
-              <h3 className="text-xl font-bold text-card-foreground mb-4 text-center group-hover:text-blue-600 transition-colors duration-300">Excellence in Healthcare</h3>
-              <p className="text-muted-foreground text-center leading-relaxed">
-                Providing world-class medical facilities with competitive pricing that delivers exceptional value to our patients.
-              </p>
+              <h3 className="text-lg font-bold text-card-foreground mb-2">Excellence in Healthcare</h3>
+              <p className="text-muted-foreground text-sm">Providing world-class medical facilities with competitive pricing</p>
             </div>
-          </div>
 
-          <div className="group">
-            <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-green-300 h-full animate-slide-up animation-delay-200">
-              <div className="bg-gradient-to-br from-green-100 to-green-200 p-4 rounded-full w-16 h-16 mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+            <div className="group">
+              <div className="bg-green-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Heart className="h-8 w-8 text-green-600 mx-auto" />
               </div>
-              <h3 className="text-xl font-bold text-card-foreground mb-4 text-center group-hover:text-green-600 transition-colors duration-300">Universal Access</h3>
-              <p className="text-muted-foreground text-center leading-relaxed">
-                Making healthcare accessible through subsidization and strategic placement in rural areas across Bangladesh.
-              </p>
+              <h3 className="text-lg font-bold text-card-foreground mb-2">Universal Access</h3>
+              <p className="text-muted-foreground text-sm">Making healthcare accessible through subsidization and rural placement</p>
             </div>
-          </div>
 
-          <div className="group">
-            <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-purple-300 h-full animate-slide-up animation-delay-400">
-              <div className="bg-gradient-to-br from-purple-100 to-purple-200 p-4 rounded-full w-16 h-16 mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+            <div className="group">
+              <div className="bg-purple-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Users className="h-8 w-8 text-purple-600 mx-auto" />
               </div>
-              <h3 className="text-xl font-bold text-card-foreground mb-4 text-center group-hover:text-purple-600 transition-colors duration-300">Community Outreach</h3>
-              <p className="text-muted-foreground text-center leading-relaxed">
-                Conducting rural medical camps and partnering with NGOs to reach underserved communities effectively.
-              </p>
+              <h3 className="text-lg font-bold text-card-foreground mb-2">Community Outreach</h3>
+              <p className="text-muted-foreground text-sm">Conducting rural medical camps with NGO partnerships</p>
             </div>
           </div>
         </div>
 
         {/* Partners and Partnership Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Current Partners */}
-          <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border hover:shadow-xl transition-all duration-500 animate-fade-in">
-            <h3 className="text-2xl font-bold text-card-foreground mb-6 flex items-center">
-              <Handshake className="mr-3 h-7 w-7 text-blue-600" />
+          <div className="bg-card/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-border">
+            <h3 className="text-xl font-bold text-card-foreground mb-4 flex items-center">
+              <Handshake className="mr-3 h-6 w-6 text-blue-600" />
               Current Partners
             </h3>
             
-            <div className="grid grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-3 gap-4 mb-6">
               {partners.map((partner, index) => (
-                <div key={index} className="bg-muted/50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300 hover:scale-105 group border border-border">
+                <div key={index} className="bg-muted/50 p-4 rounded-lg text-center hover:shadow-md transition-all duration-300">
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
-                    className="w-16 h-16 mx-auto mb-3 rounded-lg object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-12 h-12 mx-auto mb-2 rounded-lg object-cover"
                   />
-                  <p className="font-semibold text-card-foreground text-sm group-hover:text-blue-600 transition-colors duration-300">{partner.name}</p>
+                  <p className="font-semibold text-card-foreground text-sm">{partner.name}</p>
                 </div>
               ))}
             </div>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center space-x-4 text-muted-foreground group hover:text-green-600 transition-colors duration-300">
-                <div className="bg-green-100 p-2 rounded-full group-hover:bg-green-200 transition-colors duration-300">
-                  <Heart className="h-5 w-5 text-green-600" />
-                </div>
-                <span className="text-sm font-medium">Sponsoring Life-Changing Cataract Surgery</span>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3 text-muted-foreground text-sm">
+                <Heart className="h-4 w-4 text-green-600" />
+                <span>Sponsoring Life-Changing Cataract Surgery</span>
               </div>
-              <div className="flex items-center space-x-4 text-muted-foreground group hover:text-blue-600 transition-colors duration-300">
-                <div className="bg-blue-100 p-2 rounded-full group-hover:bg-blue-200 transition-colors duration-300">
-                  <Users className="h-5 w-5 text-blue-600" />
-                </div>
-                <span className="text-sm font-medium">Supporting Community Medical Camps</span>
+              <div className="flex items-center space-x-3 text-muted-foreground text-sm">
+                <Users className="h-4 w-4 text-blue-600" />
+                <span>Supporting Community Medical Camps</span>
               </div>
             </div>
           </div>
 
           {/* Partnership Opportunities */}
-          <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border hover:shadow-xl transition-all duration-500 animate-fade-in">
-            <div className="mb-6">
-              <h4 className="font-bold text-card-foreground mb-4 flex items-center text-lg">
-                <MapPin className="mr-3 h-6 w-6 text-blue-600" />
-                Want to Host an Eye Camp in Your Area?
-              </h4>
-              <p className="text-sm text-card-foreground mb-3 font-semibold">
-                <strong>We're truly excited to partner with you!</strong>
-              </p>
-              <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
-                Our eye camps bring modern equipment, expert eye tests, medicines, and affordable glasses — all at the lowest registration fees to ensure access for everyone.
-              </p>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                By hosting a camp, you're not just providing care — you're making a lasting impact. We also invite you to contribute as Sadaqah for this noble cause.
-              </p>
-              <p className="text-sm text-card-foreground font-semibold mb-6">
-                Ready to make a difference?
-              </p>
-            </div>
-
-            <div className="border-t border-border pt-6">
-              <h4 className="font-bold text-card-foreground mb-4 flex items-center text-lg">
-                <Handshake className="mr-3 h-6 w-6 text-green-600" />
+          <div className="bg-card/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-border">
+            <h4 className="font-bold text-card-foreground mb-3 flex items-center">
+              <MapPin className="mr-3 h-5 w-5 text-blue-600" />
+              Host an Eye Camp in Your Area
+            </h4>
+            <p className="text-sm text-muted-foreground mb-4">
+              Our eye camps bring modern equipment, expert eye tests, medicines, and affordable glasses at the lowest registration fees to ensure access for everyone.
+            </p>
+            
+            <div className="border-t border-border pt-4">
+              <h4 className="font-bold text-card-foreground mb-3 flex items-center">
+                <Handshake className="mr-3 h-5 w-5 text-green-600" />
                 Partner With Us
               </h4>
-              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                Join our mission to transform healthcare accessibility in Bangladesh through strategic partnerships.
+              <p className="text-sm text-muted-foreground mb-4">
+                Join our mission to transform healthcare accessibility in Bangladesh.
               </p>
               <Button 
                 onClick={scrollToFindUs}
-                className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-semibold py-3 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700"
               >
-                <ArrowRight className="mr-2 h-5 w-5" />
+                <ArrowRight className="mr-2 h-4 w-4" />
                 Contact Us
               </Button>
             </div>
           </div>
         </div>
 
-        {/* Impact Statistics */}
-        <div className="bg-gradient-to-r from-blue-600 via-green-600 to-purple-600 text-white p-10 rounded-2xl shadow-2xl animate-fade-in">
-          <div className="text-center mb-10">
-            <Target className="h-20 w-20 mx-auto mb-6 text-white animate-pulse" />
-            <h3 className="text-3xl font-bold mb-4">Our Impact</h3>
-            <p className="text-lg opacity-90 max-w-2xl mx-auto leading-relaxed">
+        {/* Impact Statistics - Simplified */}
+        <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border animate-fade-in">
+          <div className="text-center mb-8">
+            <Target className="h-12 w-12 mx-auto mb-4 text-blue-600" />
+            <h3 className="text-2xl font-bold text-card-foreground mb-2">Our Impact</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Every contribution creates ripples of positive change in communities across Bangladesh
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white bg-opacity-20 p-6 rounded-xl backdrop-blur-sm text-center hover:bg-opacity-30 transition-all duration-300 hover:scale-105 group">
-              <div className="bg-white bg-opacity-20 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Globe className="h-8 w-8 text-white" />
-              </div>
-              <h4 className="font-bold text-2xl mb-2">2000+</h4>
-              <p className="text-sm opacity-90">patient Complete comprehensive eye examination</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-muted/30 p-6 rounded-lg text-center">
+              <h4 className="font-bold text-2xl text-card-foreground mb-1">2000+</h4>
+              <p className="text-sm text-muted-foreground">patient Complete comprehensive eye examination</p>
             </div>
-            <div className="bg-white bg-opacity-20 p-6 rounded-xl backdrop-blur-sm text-center hover:bg-opacity-30 transition-all duration-300 hover:scale-105 group">
-              <div className="bg-white bg-opacity-20 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Heart className="h-8 w-8 text-white" />
-              </div>
-              <h4 className="font-bold text-2xl mb-2">100+</h4>
-              <p className="text-sm opacity-90">Life-changing free cataract surgery</p>
+            <div className="bg-muted/30 p-6 rounded-lg text-center">
+              <h4 className="font-bold text-2xl text-card-foreground mb-1">100+</h4>
+              <p className="text-sm text-muted-foreground">Life-changing free cataract surgery</p>
             </div>
-            <div className="bg-white bg-opacity-20 p-6 rounded-xl backdrop-blur-sm text-center hover:bg-opacity-30 transition-all duration-300 hover:scale-105 group">
-              <div className="bg-white bg-opacity-20 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Shield className="h-8 w-8 text-white" />
-              </div>
-              <h4 className="font-bold text-2xl mb-2">50+</h4>
-              <p className="text-sm opacity-90">Complete rural medical camp with free screening, glasses & medicine</p>
+            <div className="bg-muted/30 p-6 rounded-lg text-center">
+              <h4 className="font-bold text-2xl text-card-foreground mb-1">50+</h4>
+              <p className="text-sm text-muted-foreground">Complete rural medical camp with free screening, glasses & medicine</p>
             </div>
           </div>
           
-          <div className="text-center mt-10">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <div className="text-center">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg">
               <Heart className="mr-2 h-5 w-5" />
               Become a Donor
             </Button>

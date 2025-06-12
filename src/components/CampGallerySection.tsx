@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -65,22 +64,22 @@ const CampGallerySection = () => {
 
   return (
     <>
-      <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
+      <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center mb-4">
+              <div className="h-1 bg-gradient-to-r from-blue-600 to-green-600 w-12 rounded-full"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mx-4">
+                Camp Gallery
+              </h2>
+              <div className="h-1 bg-gradient-to-r from-green-600 to-blue-600 w-12 rounded-full"></div>
+            </div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Witness our impact through community outreach and medical camps
+            </p>
+          </div>
+
           <Card className="shadow-lg">
-            <CardHeader className="text-center bg-blue-600 text-white">
-              <CardTitle className="text-3xl font-bold flex items-center justify-center">
-                <div className="flex items-center">
-                  <div className="h-1 bg-white w-12 rounded-full mr-4"></div>
-                  <Eye className="mr-3 h-8 w-8" />
-                  Camp Gallery
-                  <div className="h-1 bg-white w-12 rounded-full ml-4"></div>
-                </div>
-              </CardTitle>
-              <p className="text-xl opacity-90 mt-2">
-                Witness our impact through community outreach and medical camps
-              </p>
-            </CardHeader>
             <CardContent className="p-8">
               {/* Desktop Grid View */}
               <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
