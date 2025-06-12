@@ -58,17 +58,17 @@ const DoctorsSection = () => {
   };
 
   return (
-    <section id="doctors" className="py-16 bg-gradient-to-br from-blue-50 to-green-50">
+    <section id="doctors" className="py-16 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-fade-in">
-          <div className="flex items-center justify-center mb-4">
-            <div className="h-1 bg-blue-600 w-12 rounded-full animate-scale-in"></div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mx-4 transition-all duration-300 hover:text-blue-600">
+          <div className="flex items-center justify-center mb-6">
+            <div className="h-1 bg-gradient-to-r from-blue-600 to-green-600 w-16 rounded-full animate-scale-in"></div>
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent mx-4 transition-all duration-300">
               Our Expert Doctors
             </h2>
-            <div className="h-1 bg-blue-600 w-12 rounded-full animate-scale-in"></div>
+            <div className="h-1 bg-gradient-to-r from-green-600 to-blue-600 w-16 rounded-full animate-scale-in"></div>
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Meet our team of highly qualified and experienced ophthalmologists dedicated to providing the best eye care services
           </p>
         </div>
@@ -77,7 +77,7 @@ const DoctorsSection = () => {
         <div className="relative">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {getCurrentDoctors().map((doctor, index) => (
-              <div key={index} className="bg-card rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 hover:scale-105 animate-fade-in border border-border">
+              <div key={index} className="bg-card/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 hover:scale-105 animate-fade-in border border-border">
                 <div className="relative group">
                   <img 
                     src={doctor.image} 
@@ -147,7 +147,7 @@ const DoctorsSection = () => {
         </div>
 
         {/* Why Choose Our Doctors */}
-        <div className="mt-16 bg-card p-8 rounded-lg shadow-lg border border-border animate-fade-in">
+        <div className="mt-16 bg-card/80 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-border animate-fade-in">
           <div className="text-center">
             <h3 className="text-2xl font-bold text-card-foreground mb-4 transition-colors duration-300 hover:text-blue-600">Why Choose Our Doctors?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

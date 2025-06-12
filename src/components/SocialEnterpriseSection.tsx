@@ -27,7 +27,7 @@ const SocialEnterpriseSection = () => {
   };
 
   return (
-    <section id="social-enterprise" className="py-16 bg-gradient-to-br from-blue-50 via-green-50 to-purple-50">
+    <section id="social-enterprise" className="py-16 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <div className="flex items-center justify-center mb-6">
@@ -45,7 +45,7 @@ const SocialEnterpriseSection = () => {
         {/* Mission Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="group">
-            <div className="bg-card p-8 rounded-xl shadow-lg border border-border hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-blue-300 h-full">
+            <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-blue-300 h-full animate-slide-up">
               <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-4 rounded-full w-16 h-16 mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                 <Building2 className="h-8 w-8 text-blue-600 mx-auto" />
               </div>
@@ -57,7 +57,7 @@ const SocialEnterpriseSection = () => {
           </div>
 
           <div className="group">
-            <div className="bg-card p-8 rounded-xl shadow-lg border border-border hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-green-300 h-full">
+            <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-green-300 h-full animate-slide-up animation-delay-200">
               <div className="bg-gradient-to-br from-green-100 to-green-200 p-4 rounded-full w-16 h-16 mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                 <Heart className="h-8 w-8 text-green-600 mx-auto" />
               </div>
@@ -69,7 +69,7 @@ const SocialEnterpriseSection = () => {
           </div>
 
           <div className="group">
-            <div className="bg-card p-8 rounded-xl shadow-lg border border-border hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-purple-300 h-full">
+            <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-purple-300 h-full animate-slide-up animation-delay-400">
               <div className="bg-gradient-to-br from-purple-100 to-purple-200 p-4 rounded-full w-16 h-16 mx-auto mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                 <Users className="h-8 w-8 text-purple-600 mx-auto" />
               </div>
@@ -84,7 +84,7 @@ const SocialEnterpriseSection = () => {
         {/* Partners and Partnership Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-16">
           {/* Current Partners */}
-          <div className="bg-card p-8 rounded-xl shadow-lg border border-border hover:shadow-xl transition-all duration-500 animate-fade-in">
+          <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border hover:shadow-xl transition-all duration-500 animate-fade-in">
             <h3 className="text-2xl font-bold text-card-foreground mb-6 flex items-center">
               <Handshake className="mr-3 h-7 w-7 text-blue-600" />
               Current Partners
@@ -120,8 +120,8 @@ const SocialEnterpriseSection = () => {
           </div>
 
           {/* Partnership Opportunities */}
-          <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-xl border-2 border-blue-200 shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in">
-            <div className="bg-card p-6 rounded-lg border border-border mb-6 hover:shadow-md transition-shadow duration-300">
+          <div className="bg-card/80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-border hover:shadow-xl transition-all duration-500 animate-fade-in">
+            <div className="mb-6">
               <h4 className="font-bold text-card-foreground mb-4 flex items-center text-lg">
                 <MapPin className="mr-3 h-6 w-6 text-blue-600" />
                 Want to Host an Eye Camp in Your Area?
@@ -135,18 +135,18 @@ const SocialEnterpriseSection = () => {
               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                 By hosting a camp, you're not just providing care — you're making a lasting impact. We also invite you to contribute as Sadaqah for this noble cause.
               </p>
-              <p className="text-sm text-card-foreground font-semibold mb-4">
+              <p className="text-sm text-card-foreground font-semibold mb-6">
                 Ready to make a difference?
               </p>
             </div>
 
-            <div className="bg-card p-6 rounded-lg border border-border hover:shadow-md transition-shadow duration-300">
+            <div className="border-t border-border pt-6">
               <h4 className="font-bold text-card-foreground mb-4 flex items-center text-lg">
                 <Handshake className="mr-3 h-6 w-6 text-green-600" />
                 Partner With Us
               </h4>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                Join our mission to transform healthcare accessibility in Bangladesh through strategic partnerships and community collaboration.
+                Join our mission to transform healthcare accessibility in Bangladesh through strategic partnerships.
               </p>
               <Button 
                 onClick={scrollToFindUs}
@@ -174,35 +174,30 @@ const SocialEnterpriseSection = () => {
               <div className="bg-white bg-opacity-20 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Globe className="h-8 w-8 text-white" />
               </div>
-              <h4 className="font-bold text-2xl mb-2">৳300</h4>
-              <p className="text-sm opacity-90">Complete comprehensive eye examination</p>
+              <h4 className="font-bold text-2xl mb-2">2000+</h4>
+              <p className="text-sm opacity-90">patient Complete comprehensive eye examination</p>
             </div>
             <div className="bg-white bg-opacity-20 p-6 rounded-xl backdrop-blur-sm text-center hover:bg-opacity-30 transition-all duration-300 hover:scale-105 group">
               <div className="bg-white bg-opacity-20 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Heart className="h-8 w-8 text-white" />
               </div>
-              <h4 className="font-bold text-2xl mb-2">৳6,000</h4>
-              <p className="text-sm opacity-90">Life-changing cataract surgery</p>
+              <h4 className="font-bold text-2xl mb-2">100+</h4>
+              <p className="text-sm opacity-90">Life-changing free cataract surgery</p>
             </div>
             <div className="bg-white bg-opacity-20 p-6 rounded-xl backdrop-blur-sm text-center hover:bg-opacity-30 transition-all duration-300 hover:scale-105 group">
               <div className="bg-white bg-opacity-20 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Shield className="h-8 w-8 text-white" />
               </div>
-              <h4 className="font-bold text-2xl mb-2">৳30,000+</h4>
+              <h4 className="font-bold text-2xl mb-2">50+</h4>
               <p className="text-sm opacity-90">Complete rural medical camp with free screening, glasses & medicine</p>
             </div>
           </div>
           
           <div className="text-center mt-10">
-            <div className="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <Heart className="mr-2 h-5 w-5" />
-                Donate Now
-              </Button>
-              <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 font-bold border-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                Become a Monthly Donor
-              </Button>
-            </div>
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <Heart className="mr-2 h-5 w-5" />
+              Become a Donor
+            </Button>
           </div>
         </div>
       </div>
