@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart, Users, Building2, Handshake, ArrowRight, MapPin } from 'lucide-react';
@@ -114,7 +115,7 @@ const SocialEnterpriseSection = () => {
               </div>
             </div>
 
-            <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+            <div className="bg-blue-50 p-6 rounded-lg border border-blue-200 mb-6">
               <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
                 <MapPin className="mr-2 h-5 w-5 text-blue-600" />
                 Want to Host an Eye Camp in Your Area?
@@ -128,28 +129,28 @@ const SocialEnterpriseSection = () => {
               <p className="text-sm text-gray-600 mb-4">
                 By hosting a camp, you're not just providing care — you're making a lasting impact. We also invite you to contribute as Sadaqah for this noble cause.
               </p>
-              <p className="text-sm text-gray-700 font-medium mb-3">
+              <p className="text-sm text-gray-700 font-medium mb-4">
                 Ready to make a difference?
+              </p>
+            </div>
+
+            <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+              <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                <Handshake className="mr-2 h-5 w-5 text-green-600" />
+                Partner With Us
+              </h4>
+              <p className="text-sm text-gray-600 mb-4">
+                Join our mission to transform healthcare accessibility in Bangladesh through strategic partnerships.
               </p>
               <Button 
                 onClick={scrollToFindUs}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white"
               >
+                <ArrowRight className="mr-2 h-4 w-4" />
                 Contact Us
               </Button>
             </div>
           </div>
-        </div>
-
-        <div className="text-center bg-white p-8 rounded-lg shadow-lg mb-16">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">Partner With Us</h3>
-          <p className="text-gray-600 mb-6">
-            Join our mission to transform healthcare accessibility in Bangladesh through strategic partnerships.
-          </p>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white" onClick={scrollToFindUs}>
-            <ArrowRight className="mr-2 h-4 w-4" />
-            Contact Us for Partnership
-          </Button>
         </div>
 
         <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white p-8 rounded-lg shadow-lg">
