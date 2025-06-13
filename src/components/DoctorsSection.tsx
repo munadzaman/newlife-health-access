@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Star, Award, Clock, Users, ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 
@@ -43,21 +44,41 @@ const DoctorsSection = () => {
     }
   ];
 
+  const getDoctorsPerPage = () => {
+    if (window.innerWidth < 768) return 1; // Mobile
+    if (window.innerWidth < 1024) return 2; // Tablet
+    return 3; // Desktop
+  };
+
+  const [doctorsPerPage, setDoctorsPerPage] = useState(getDoctorsPerPage());
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setDoctorsPerPage(getDoctorsPerPage());
+      setCurrentIndex(0); // Reset to first page on resize
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(doctors.length / doctorsPerPage);
+
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % Math.ceil(doctors.length / 3));
+    setCurrentIndex((prev) => (prev + 1) % totalPages);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + Math.ceil(doctors.length / 3)) % Math.ceil(doctors.length / 3));
+    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
   };
 
   const getCurrentDoctors = () => {
-    const start = currentIndex * 3;
-    return doctors.slice(start, start + 3);
+    const start = currentIndex * doctorsPerPage;
+    return doctors.slice(start, start + doctorsPerPage);
   };
 
   return (
-    <section id="doctors" className="py-16 bg-gradient-to-br from-green-50 to-blue-50 shadow-lg">
+    <section id="doctors" className="py-16 bg-gradient-to-br from-green-50 to-blue-50 shadow-lg overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-fade-in">
           <div className="flex items-center justify-center mb-4">
@@ -74,7 +95,11 @@ const DoctorsSection = () => {
 
         {/* Doctors Grid with Navigation */}
         <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          <div className={`grid gap-8 mb-8 ${
+            doctorsPerPage === 1 ? 'grid-cols-1' : 
+            doctorsPerPage === 2 ? 'grid-cols-1 md:grid-cols-2' : 
+            'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+          }`}>
             {getCurrentDoctors().map((doctor, index) => (
               <div key={index} className="bg-card/80 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 hover:scale-105 animate-fade-in border border-border">
                 <div className="relative group">
@@ -127,17 +152,19 @@ const DoctorsSection = () => {
           </div>
 
           {/* Navigation Arrows */}
-          {doctors.length > 3 && (
+          {totalPages > 1 && (
             <>
               <button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl z-10 animate-pulse"
+                disabled={currentIndex === 0}
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl z-10"
               >
                 <ChevronLeft className="h-6 w-6" />
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl z-10 animate-pulse"
+                disabled={currentIndex === totalPages - 1}
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl z-10"
               >
                 <ChevronRight className="h-6 w-6" />
               </button>

@@ -1,19 +1,20 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { MapPin, Phone, Clock, Mail, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { MapPin, Phone, Clock, Mail, Facebook, Instagram, Youtube, Linkedin, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const MapSection = () => {
   return (
-    <section className="py-16 bg-white" id="location">
+    <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50 shadow-lg overflow-hidden" id="location">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
-            <div className="h-1 bg-blue-600 w-12 rounded-full"></div>
+            <div className="h-1 bg-gradient-to-r from-blue-600 to-green-600 w-12 rounded-full"></div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mx-4">
               Find Us
             </h2>
-            <div className="h-1 bg-blue-600 w-12 rounded-full"></div>
+            <div className="h-1 bg-gradient-to-r from-green-600 to-blue-600 w-12 rounded-full"></div>
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Visit our flagship clinic in Bishwanath, Sylhet for world-class healthcare services
@@ -39,7 +40,7 @@ const MapSection = () => {
         </div>
 
         {/* Contact Us Section */}
-        <div className="bg-blue-50 p-8 rounded-lg">
+        <div className="bg-card/80 backdrop-blur-sm p-8 rounded-lg shadow-lg border border-border">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Contact Us</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -63,8 +64,8 @@ const MapSection = () => {
               <div className="bg-purple-600 text-white p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
                 <Phone className="h-6 w-6" />
               </div>
-              <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-              <p className="text-gray-600 text-sm">+880 1XXX-XXXXXX</p>
+              <h4 className="font-semibold text-gray-900 mb-1">Call Us</h4>
+              <p className="text-gray-600 text-sm">+8801324488520</p>
             </div>
             
             <div className="text-center">
@@ -76,25 +77,40 @@ const MapSection = () => {
             </div>
           </div>
 
+          {/* Additional Contact Info */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="text-center">
+              <div className="bg-green-600 text-white p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                <MessageCircle className="h-6 w-6" />
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-1">WhatsApp</h4>
+              <p className="text-gray-600 text-sm">+8801775666542</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-blue-600 text-white p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                <Phone className="h-6 w-6" />
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-1">Contact Us</h4>
+              <p className="text-gray-600 text-sm">+8801612281971</p>
+            </div>
+          </div>
+
           {/* Social Media */}
           <div className="text-center">
             <h4 className="font-semibold text-gray-900 mb-4">Follow Us</h4>
             <div className="flex justify-center space-x-4">
-              <Button size="sm" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
-                <Facebook className="h-4 w-4 mr-2" />
-                Facebook
+              <Button size="sm" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white p-2">
+                <Facebook className="h-4 w-4" />
               </Button>
-              <Button size="sm" variant="outline" className="border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white">
-                <Instagram className="h-4 w-4 mr-2" />
-                Instagram
+              <Button size="sm" variant="outline" className="border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white p-2">
+                <Instagram className="h-4 w-4" />
               </Button>
-              <Button size="sm" variant="outline" className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white">
-                <Youtube className="h-4 w-4 mr-2" />
-                YouTube
+              <Button size="sm" variant="outline" className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white p-2">
+                <Youtube className="h-4 w-4" />
               </Button>
-              <Button size="sm" variant="outline" className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white">
-                <Linkedin className="h-4 w-4 mr-2" />
-                LinkedIn
+              <Button size="sm" variant="outline" className="border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white p-2">
+                <Linkedin className="h-4 w-4" />
               </Button>
             </div>
           </div>
