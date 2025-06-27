@@ -76,17 +76,6 @@ const MapSection = () => {
             </div>
           </div>
 
-          {/* Additional Contact Info - Removed one phone number */}
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-8 max-w-md mx-auto">
-            <div className="text-center">
-              <div className="bg-green-600 text-white p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <MessageCircle className="h-6 w-6" />
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-1">WhatsApp</h4>
-              <p className="text-gray-600 text-sm">+8801775666542</p>
-            </div>
-          </div>
-
           {/* Social Media */}
           <div className="text-center">
             <h4 className="font-semibold text-gray-900 mb-4">Follow Us</h4>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Star, Award, Clock, Users, ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 
@@ -7,40 +6,59 @@ const DoctorsSection = () => {
 
   const doctors = [
     {
-      name: "Dr. M Abdul Basit Raju",
-      designation: "Eye Specialist and Phaco Surgeon",
-      qualifications: "MBBS, DO(BSMMU), FCPS(Eye)",
+      name: "Dr. M. Abdul Basit Raju",
+      designation: "Eye Specialist & Phaco Surgeon",
+      qualifications: "MBBS, DO (Ophthalmology) BSMMU, FCPS (Ophthalmology) CCD (BIRDEM)",
       specializations: ["Phaco Surgery", "Corneal Diseases", "Pediatric Eye Care"],
       experience: "12+ years",
-      availability: "Sunday: 9:00 AM - 6:00 PM",
+      availability: "Sunday: 3:00 PM - 5:00 PM",
+      registration: "BMDC Registration: A 73262",
+      affiliation: "National Institute of Ophthalmology & Hospital, Agargaon, Dhaka | Sylhet M.A.G. Osmani Medical College, Sylhet",
       image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
-      name: "Shohel Rana",
-      designation: "Optometrist",
-      qualifications: "Diploma in Optometry",
-      specializations: ["Contact Lens", "Vision Therapy"],
+      name: "Dr. Masum Ahmed",
+      designation: "Eye Specialist & Surgeon",
+      qualifications: "MBBS, PGT, MS - Bangabandhu Sheikh Mujib Medical University",
+      specializations: ["Eye Surgery", "Retinal Diseases", "Glaucoma Treatment"],
+      experience: "10+ years",
+      availability: "Wednesday - Thursday: 10:00 AM - 5:00 PM",
+      registration: "BMDC Registration: A 106487",
+      affiliation: "",
+      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    },
+    {
+      name: "Mohammad Shohel Rana",
+      designation: "Specialist in Eye Vision & Neuro-Optometric Disorders",
+      qualifications: "MPH in Ophthalmology, B.Optom (DU), FAHS (NITOR), Certified in Advanced Optometry & Vision Therapy",
+      specializations: ["Vision Therapy", "Neuro-Optometry", "Advanced Optometry"],
       experience: "8+ years",
-      availability: "Sunday: 9:00 AM - 6:00 PM",
+      availability: "Daily: 9:00 AM - 5:00 PM",
+      registration: "Reg. No.: 5973-FAHS (NITOR)",
+      affiliation: "",
       image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
-      name: "Dr. Mustak Ahmed Jibon",
-      designation: "Chief Ophthalmologist (Optometrist)",
-      qualifications: "Diploma in Optometry",
-      specializations: ["Cataract Surgery", "Retinal Diseases", "Glaucoma Treatment"],
+      name: "Mostak Ahmed Jibon",
+      designation: "Eye Vision Expert",
+      qualifications: "MLOP, MBICO - Mymensingh, DOLV - University of South Asia, EMO - Dhaka",
+      specializations: ["Eye Vision", "Optometry", "Vision Assessment"],
       experience: "15+ years",
-      availability: "Monday - Saturday: 9:00 AM - 6:00 PM",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      availability: "Everyday: 9:00 AM - 5:00 PM",
+      registration: "Govt. Registration No: 503/670",
+      affiliation: "",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
-      name: "Dr. Ashit Dee",
-      designation: "Chief Ophthalmologist (Optometrist)",
-      qualifications: "Diploma in Optometry",
-      specializations: ["Advanced Eye Surgery", "Diabetic Retinopathy", "Macular Diseases"],
-      experience: "18+ years",
-      availability: "Monday - Saturday: 9:00 AM - 6:00 PM",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      name: "Asit Sutro Dhor",
+      designation: "Eye Vision Expert",
+      qualifications: "DMF, Dhaka",
+      specializations: ["Eye Vision", "Optometry", "Vision Care"],
+      experience: "12+ years",
+      availability: "Daily: 9:00 AM - 5:00 PM",
+      registration: "BMDC Registration No: D 13933",
+      affiliation: "",
+      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     }
   ];
 
@@ -131,6 +149,17 @@ const DoctorsSection = () => {
                       <Clock className="h-4 w-4 mr-2 text-orange-600" />
                       <span className="text-sm text-orange-600 font-medium">{doctor.availability}</span>
                     </div>
+                    {doctor.registration && (
+                      <div className="text-sm text-muted-foreground">
+                        <span className="font-medium">{doctor.registration}</span>
+                      </div>
+                    )}
+                    {doctor.affiliation && (
+                      <div className="text-sm text-muted-foreground">
+                        <span className="font-medium">Affiliation: </span>
+                        <span>{doctor.affiliation}</span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="mb-4">

@@ -51,13 +51,6 @@ const TeamSection = () => {
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
-      name: "Mrs Shama Rahman",
-      position: "Director",
-      category: "Board of Directors",
-      bio: "Healthcare administration and community outreach specialist",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b5bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-    },
-    {
       name: "Mifta Uddin Mizu",
       position: "Director",
       category: "Board of Directors",
@@ -224,7 +217,6 @@ const TeamSection = () => {
         {/* Operational Team with View More Button */}
         <div>
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Operational Team</h3>
             <Button 
               onClick={() => setShowOperationalTeam(!showOperationalTeam)}
               variant="outline"
@@ -244,6 +236,8 @@ const TeamSection = () => {
           
           {showOperationalTeam && (
             <div className="animate-fade-in">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Operational Team</h3>
+              
               {/* Desktop Grid View */}
               <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {operationalTeam.map((member, index) => (
