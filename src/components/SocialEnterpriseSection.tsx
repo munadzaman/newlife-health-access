@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Heart, Users, Building2, Handshake, ArrowRight, MapPin, Target } from 'lucide-react';
@@ -20,7 +19,7 @@ const SocialEnterpriseSection = () => {
   ];
 
   const scrollToFindUs = () => {
-    const findUsSection = document.getElementById('map');
+    const findUsSection = document.getElementById('location');
     if (findUsSection) {
       findUsSection.scrollIntoView({ behavior: 'smooth' });
     }
@@ -71,8 +70,8 @@ const SocialEnterpriseSection = () => {
           </div>
         </div>
 
-        {/* Partners and Partnership Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        {/* Partners and Partnership Section - Separated */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {/* Current Partners */}
           <div className="bg-card/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-border">
             <h3 className="text-xl font-bold text-card-foreground mb-4 flex items-center">
@@ -105,32 +104,41 @@ const SocialEnterpriseSection = () => {
             </div>
           </div>
 
-          {/* Partnership Opportunities */}
+          {/* Host an Eye Camp - Separate Section */}
           <div className="bg-card/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-border">
             <h4 className="font-bold text-card-foreground mb-3 flex items-center">
               <MapPin className="mr-3 h-5 w-5 text-blue-600" />
-              Host an Eye Camp in Your Area
+              Host an Eye Camp
             </h4>
             <p className="text-sm text-muted-foreground mb-4">
               Our eye camps bring modern equipment, expert eye tests, medicines, and affordable glasses at the lowest registration fees to ensure access for everyone.
             </p>
-            
-            <div className="border-t border-border pt-4">
-              <h4 className="font-bold text-card-foreground mb-3 flex items-center">
-                <Handshake className="mr-3 h-5 w-5 text-green-600" />
-                Partner With Us
-              </h4>
-              <p className="text-sm text-muted-foreground mb-4">
-                Join our mission to transform healthcare accessibility in Bangladesh.
-              </p>
-              <Button 
-                onClick={scrollToFindUs}
-                className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700"
-              >
-                <ArrowRight className="mr-2 h-4 w-4" />
-                Contact Us
-              </Button>
-            </div>
+            <Button 
+              onClick={scrollToFindUs}
+              className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700"
+            >
+              <ArrowRight className="mr-2 h-4 w-4" />
+              Contact Us
+            </Button>
+          </div>
+
+          {/* Partner With Us */}
+          <div className="bg-card/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-border">
+            <h4 className="font-bold text-card-foreground mb-3 flex items-center">
+              <Handshake className="mr-3 h-5 w-5 text-green-600" />
+              Partner With Us
+            </h4>
+            <p className="text-sm text-muted-foreground mb-4">
+              Join our mission to transform healthcare accessibility in Bangladesh. Together we can make a lasting impact.
+            </p>
+            <Button 
+              onClick={scrollToFindUs}
+              variant="outline"
+              className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+            >
+              <ArrowRight className="mr-2 h-4 w-4" />
+              Get In Touch
+            </Button>
           </div>
         </div>
 

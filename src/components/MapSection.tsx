@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { MapPin, Phone, Clock, Mail, Facebook, Instagram, Youtube, Linkedin, MessageCircle } from 'lucide-react';
@@ -77,22 +76,14 @@ const MapSection = () => {
             </div>
           </div>
 
-          {/* Additional Contact Info */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {/* Additional Contact Info - Removed one phone number */}
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 mb-8 max-w-md mx-auto">
             <div className="text-center">
               <div className="bg-green-600 text-white p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
                 <MessageCircle className="h-6 w-6" />
               </div>
               <h4 className="font-semibold text-gray-900 mb-1">WhatsApp</h4>
               <p className="text-gray-600 text-sm">+8801775666542</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="bg-blue-600 text-white p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <Phone className="h-6 w-6" />
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-1">Contact Us</h4>
-              <p className="text-gray-600 text-sm">+8801612281971</p>
             </div>
           </div>
 

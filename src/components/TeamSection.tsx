@@ -1,5 +1,6 @@
-import React from 'react';
-import { Globe, Award } from 'lucide-react';
+import React, { useState } from 'react';
+import { Globe, Award, ChevronDown, ChevronUp } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Carousel,
   CarouselContent,
@@ -9,6 +10,8 @@ import {
 } from "@/components/ui/carousel"
 
 const TeamSection = () => {
+  const [showOperationalTeam, setShowOperationalTeam] = useState(false);
+
   const chairman = {
     name: "Syed Tufayel Rahman",
     position: "Chairman",
@@ -218,31 +221,52 @@ const TeamSection = () => {
           </div>
         </div>
 
-        {/* Operational Team */}
+        {/* Operational Team with View More Button */}
         <div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Operational Team</h3>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Operational Team</h3>
+            <Button 
+              onClick={() => setShowOperationalTeam(!showOperationalTeam)}
+              variant="outline"
+              className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+            >
+              {showOperationalTeam ? (
+                <>
+                  Hide Team <ChevronUp className="ml-2 h-4 w-4" />
+                </>
+              ) : (
+                <>
+                  View More <ChevronDown className="ml-2 h-4 w-4" />
+                </>
+              )}
+            </Button>
+          </div>
           
-          {/* Desktop Grid View */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {operationalTeam.map((member, index) => (
-              <TeamCard key={index} member={member} />
-            ))}
-          </div>
-
-          {/* Mobile Carousel View */}
-          <div className="md:hidden">
-            <Carousel className="w-full">
-              <CarouselContent>
+          {showOperationalTeam && (
+            <div className="animate-fade-in">
+              {/* Desktop Grid View */}
+              <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {operationalTeam.map((member, index) => (
-                  <CarouselItem key={index} className="basis-full">
-                    <TeamCard member={member} />
-                  </CarouselItem>
+                  <TeamCard key={index} member={member} />
                 ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </div>
+              </div>
+
+              {/* Mobile Carousel View */}
+              <div className="md:hidden">
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {operationalTeam.map((member, index) => (
+                      <CarouselItem key={index} className="basis-full">
+                        <TeamCard member={member} />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
