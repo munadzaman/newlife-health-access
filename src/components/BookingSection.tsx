@@ -4,12 +4,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Calendar, Clock, MapPin, User } from 'lucide-react';
+import { Calendar, Clock, MapPin, User, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
 const BookingSection = () => {
   const [formData, setFormData] = useState({
     name: '',
+    email: '',
     phone: '',
     clinic: '',
     service: '',
@@ -67,7 +68,7 @@ const BookingSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.phone || !formData.clinic || !formData.service || !formData.date) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.clinic || !formData.service || !formData.date) {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields.",
@@ -85,6 +86,7 @@ const BookingSection = () => {
         subject: 'New Appointment Booking - Newlife Medical Services',
         data: {
           name: formData.name,
+          email: formData.email,
           phone: formData.phone,
           clinic: clinics.find(c => c.value === formData.clinic)?.label || formData.clinic,
           service: services.find(s => s.value === formData.service)?.label || formData.service,
@@ -99,12 +101,13 @@ const BookingSection = () => {
 
       toast({
         title: "Appointment Booked!",
-        description: `Your appointment has been confirmed. We'll contact you at ${formData.phone} with further details.`,
+        description: `Your appointment has been confirmed. We'll contact you at ${formData.email} and ${formData.phone} with further details.`,
       });
 
       // Reset form
       setFormData({
         name: '',
+        email: '',
         phone: '',
         clinic: '',
         service: '',
@@ -158,6 +161,21 @@ const BookingSection = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                     placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="flex items-center">
+                    <Mail className="h-4 w-4 mr-2" />
+                    Email Address *
+                  </Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    placeholder="Enter your email address"
                     required
                   />
                 </div>
@@ -266,7 +284,7 @@ const BookingSection = () => {
               </Button>
 
               <p className="text-sm text-gray-600 text-center">
-                * Required fields. We'll contact you within 24 hours to confirm your appointment.
+                * Required fields. We'll contact you within 24 hours to confirm your appointment and send a confirmation email.
               </p>
             </form>
           </CardContent>

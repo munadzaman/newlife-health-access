@@ -18,6 +18,10 @@ const Navigation = () => {
     }
   };
 
+  const handleCallUs = () => {
+    window.location.href = 'tel:+8801324488520';
+  };
+
   return (
     <nav className="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-100 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -172,7 +176,11 @@ const Navigation = () => {
             <Button variant="outline" size="sm" className="text-blue-600 border-blue-600 bg-white hover:bg-blue-600 hover:text-white font-medium px-3 py-1 rounded-lg transition-all duration-200 hover:scale-105">
               Patient Portal
             </Button>
-            <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-lg font-medium transition-all duration-200 hover:scale-105">
+            <Button 
+              size="sm" 
+              className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-lg font-medium transition-all duration-200 hover:scale-105"
+              onClick={handleCallUs}
+            >
               <Phone className="mr-1 h-3 w-3" />
               Call Us
             </Button>
