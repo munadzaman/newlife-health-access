@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { TrendingUp, Shield, Globe, Target, Heart } from 'lucide-react';
+import { toast } from '@/hooks/use-toast';
 
 const InvestorsSection = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +13,8 @@ const InvestorsSection = () => {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -20,10 +22,78 @@ const InvestorsSection = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendEmail = async (emailData: any) => {
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Email sending error:', error);
+      throw error;
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Investment interest submitted:', formData);
-    // Handle form submission here
+    
+    if (!formData.fullName || !formData.email || !formData.telephone || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const emailData = {
+        type: 'investment',
+        to: 'munadzaman@gmail.com',
+        subject: 'New Investment Interest - Newlife Medical Services',
+        data: {
+          fullName: formData.fullName,
+          email: formData.email,
+          telephone: formData.telephone,
+          message: formData.message,
+          submittedAt: new Date().toLocaleString()
+        }
+      };
+
+      await sendEmail(emailData);
+
+      toast({
+        title: "Interest Submitted!",
+        description: "Thank you for your investment interest. We'll contact you soon to discuss opportunities.",
+      });
+
+      // Reset form
+      setFormData({
+        fullName: '',
+        email: '',
+        telephone: '',
+        message: ''
+      });
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your interest. Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -150,8 +220,12 @@ const InvestorsSection = () => {
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 py-3">
-                Submit Investment Interest
+              <Button 
+                type="submit" 
+                className="w-full bg-blue-600 hover:bg-blue-700 py-3"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Submitting...' : 'Submit Investment Interest'}
               </Button>
             </form>
 

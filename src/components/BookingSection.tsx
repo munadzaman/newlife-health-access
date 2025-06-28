@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -18,6 +17,8 @@ const BookingSection = () => {
     date: '',
     time: ''
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const clinics = [
     { value: 'bishwanath', label: 'Bishwanath Eye Hospital, Sylhet' }
@@ -42,7 +43,28 @@ const BookingSection = () => {
     '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM'
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendEmail = async (emailData: any) => {
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Email sending error:', error);
+      throw error;
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.name || !formData.phone || !formData.clinic || !formData.service || !formData.date) {
@@ -54,22 +76,51 @@ const BookingSection = () => {
       return;
     }
 
-    // Simulate booking confirmation
-    toast({
-      title: "Appointment Booked!",
-      description: `Your appointment has been confirmed. We'll contact you at ${formData.phone} with further details.`,
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({
-      name: '',
-      phone: '',
-      clinic: '',
-      service: '',
-      doctor: '',
-      date: '',
-      time: ''
-    });
+    try {
+      const emailData = {
+        type: 'appointment',
+        to: 'munadzaman@gmail.com',
+        subject: 'New Appointment Booking - Newlife Medical Services',
+        data: {
+          name: formData.name,
+          phone: formData.phone,
+          clinic: clinics.find(c => c.value === formData.clinic)?.label || formData.clinic,
+          service: services.find(s => s.value === formData.service)?.label || formData.service,
+          doctor: doctors.find(d => d.value === formData.doctor)?.label || formData.doctor || 'Not specified',
+          date: formData.date,
+          time: formData.time || 'Not specified',
+          submittedAt: new Date().toLocaleString()
+        }
+      };
+
+      await sendEmail(emailData);
+
+      toast({
+        title: "Appointment Booked!",
+        description: `Your appointment has been confirmed. We'll contact you at ${formData.phone} with further details.`,
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        phone: '',
+        clinic: '',
+        service: '',
+        doctor: '',
+        date: '',
+        time: ''
+      });
+    } catch (error) {
+      toast({
+        title: "Booking Failed",
+        description: "There was an error submitting your appointment. Please try again or call us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -206,8 +257,12 @@ const BookingSection = () => {
                 </Select>
               </div>
 
-              <Button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg">
-                Confirm Booking
+              <Button 
+                type="submit" 
+                className="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Submitting...' : 'Confirm Booking'}
               </Button>
 
               <p className="text-sm text-gray-600 text-center">

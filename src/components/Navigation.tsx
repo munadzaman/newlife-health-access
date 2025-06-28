@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, Phone, ChevronDown, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -20,7 +19,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100 transition-all duration-300">
+    <nav className="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-100 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with logo and social media on same level - reduced padding */}
         <div className="flex justify-between items-center py-2 border-b border-gray-50">

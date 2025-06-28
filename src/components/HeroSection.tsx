@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Mail } from 'lucide-react';
@@ -55,8 +54,15 @@ const HeroSection = () => {
     }
   };
 
+  const openWhatsApp = () => {
+    const phoneNumber = '+8801775666542';
+    const message = 'Hello, I would like to book an appointment for eye consultation.';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
-    <section className="relative h-[calc(100vh-96px)] overflow-hidden">
+    <section className="relative h-[calc(100vh-96px)] overflow-hidden mt-24">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -84,7 +90,11 @@ const HeroSection = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                <Button 
+                  size="lg" 
+                  className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                  onClick={openWhatsApp}
+                >
                   <MessageCircle className="mr-2 h-4 w-4" />
                   Book an Appointment on WhatsApp
                 </Button>
