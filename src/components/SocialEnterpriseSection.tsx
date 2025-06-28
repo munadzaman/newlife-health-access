@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, Users, Building2, Handshake, ArrowRight, Target } from 'lucide-react';
+import { Heart, Users, Building2, UserCheck, ArrowRight, Target } from 'lucide-react';
 
 const SocialEnterpriseSection = () => {
   const partners = [
@@ -75,7 +75,7 @@ const SocialEnterpriseSection = () => {
           {/* Current Partners and Partner With Us - Combined */}
           <div className="bg-card/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-border">
             <h3 className="text-xl font-bold text-card-foreground mb-4 flex items-center">
-              <Handshake className="mr-3 h-6 w-6 text-blue-600" />
+              <UserCheck className="mr-3 h-6 w-6 text-blue-600" />
               Our Partners & Partnerships
             </h3>
             
