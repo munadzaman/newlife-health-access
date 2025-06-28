@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Play, Eye, X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import {
   Carousel,
   CarouselContent,
@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/carousel"
 
 const CampGallerySection = () => {
+  const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const galleryItems = [
@@ -146,7 +147,11 @@ const CampGallerySection = () => {
               </div>
 
               <div className="text-center">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
+                <Button 
+                  size="lg" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
+                  onClick={() => navigate('/gallery')}
+                >
                   View More
                 </Button>
               </div>

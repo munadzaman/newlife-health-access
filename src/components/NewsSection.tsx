@@ -117,7 +117,12 @@ const NewsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="border-blue-600 text-blue-600 hover:bg-blue-50"
+            onClick={() => navigate('/news')}
+          >
             View All News
           </Button>
         </div>
