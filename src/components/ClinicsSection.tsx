@@ -7,7 +7,7 @@ import { MapPin, Clock, ExternalLink } from 'lucide-react';
 const ClinicsSection = () => {
   const clinics = [
     {
-      name: 'Bishwanath Eye Hospital',
+      name: 'Newlife Eye Hospital',
       location: 'Bishwanath, Sylhet',
       status: 'Open',
       hours: '9:00 AM - 6:00 PM',

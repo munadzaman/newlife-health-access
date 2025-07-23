@@ -22,7 +22,7 @@ const BookingSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const clinics = [
-    { value: 'bishwanath', label: 'Bishwanath Eye Hospital, Sylhet' }
+    { value: 'bishwanath', label: 'Newlife Eye Hospital, Sylhet' }
   ];
 
   const services = [

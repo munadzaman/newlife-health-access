@@ -71,8 +71,8 @@ const Navigation = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white border border-gray-200 shadow-xl z-50 min-w-[250px] animate-fade-in">
                 <DropdownMenuItem className="py-3 px-4 hover:bg-blue-50 cursor-pointer transition-colors duration-200">
-                  <a href="#bishwanath" className="w-full text-gray-700 hover:text-blue-600 font-medium">
-                    Bishwanath Eye Hospital
+                  <a href="#newlife" className="w-full text-gray-700 hover:text-blue-600 font-medium">
+                    Newlife Eye Hospital
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="py-3 px-4 hover:bg-blue-50 cursor-pointer transition-colors duration-200">

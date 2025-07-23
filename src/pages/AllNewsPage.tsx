@@ -11,7 +11,7 @@ const AllNewsPage = () => {
   const newsItems = [
     {
       id: 1,
-      title: "New State-of-the-Art Equipment Arrives at Bishwanath Eye Hospital",
+      title: "New State-of-the-Art Equipment Arrives at Newlife Eye Hospital",
       excerpt: "We are excited to announce the arrival of advanced diagnostic equipment that will enhance our ability to provide world-class eye care services.",
       date: "2024-01-15",
       readTime: "3 min read",
