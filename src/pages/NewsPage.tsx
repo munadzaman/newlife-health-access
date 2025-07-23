@@ -209,7 +209,10 @@ const NewsPage = () => {
     }
   ];
 
-  const news = newsItems.find(item => item.id === parseInt(id || '1'));
+  const newsId = parseInt(id || '1');
+  const news = newsItems.find(item => item.id === newsId);
+  
+  console.log('Looking for news with ID:', newsId, 'Available IDs:', newsItems.map(item => item.id));
 
   if (!news) {
     return (
