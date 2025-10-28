@@ -12,7 +12,7 @@ const TeamSection = () => {
     position: "Chairman",
     category: "Leadership",
     bio: "UK-based experienced and celebrated optometrist with deep-seated roots in Bangladesh",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Syed-Tufayel-Rahman"
   };
 
   const founder = {
@@ -20,7 +20,7 @@ const TeamSection = () => {
     position: "Founder",
     category: "Leadership",
     bio: "Visionary founder with extensive business and management expertise",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Akhtar-Uzzaman"
   };
 
   const directors = [
@@ -29,56 +29,56 @@ const TeamSection = () => {
       position: "Director",
       category: "Board of Directors",
       bio: "Strategic leadership and healthcare management expert",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Abu-Taher-Md-Bahar"
     },
     {
       name: "Dr Ali Ahmed Shuaib",
       position: "Director",
       category: "Board of Directors",
       bio: "Medical professional with extensive healthcare experience",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dr-Ali-Ahmed-Shuaib"
     },
     {
       name: "Abdul Hamid Mohon",
       position: "Director",
       category: "Board of Directors",
       bio: "Legal and business professional",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Abdul-Hamid-Mohon"
     },
     {
       name: "Mifta Uddin Mizu",
       position: "Director",
       category: "Board of Directors",
       bio: "Business development and strategic planning expert",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mifta-Uddin-Mizu"
     },
     {
       name: "Dr Jaed Rahman",
       position: "Director",
       category: "Board of Directors",
       bio: "Medical professional specializing in healthcare operations",
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dr-Jaed-Rahman"
     },
     {
       name: "Ruhul Amin Tipu",
       position: "Director (US)",
       category: "Board of Directors",
       bio: "International operations and strategic partnerships",
-      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ruhul-Amin-Tipu"
     },
     {
       name: "Dewan Salman Sany",
       position: "Director",
       category: "Board of Directors",
       bio: "Business development and strategic planning expert",
-      image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dewan-Salman-Sany"
     },
     {
       name: "Dr Ashraful Islam",
       position: "Director",
       category: "Board of Directors",
       bio: "Medical professional specializing in healthcare operations",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dr-Ashraful-Islam"
     }
   ];
 
@@ -88,56 +88,63 @@ const TeamSection = () => {
       position: "Head of Operations",
       category: "Operational Team",
       bio: "Energetic, hard-working and distinguished eye care professional leading our operations",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Shohel-Rana"
     },
     {
-      name: "Dr Mustak Ahmed Jibon",
+      name: "Dr Mesbah Uddin",
       position: "Chief Ophthalmologist",
       category: "Operational Team",
       bio: "Leading specialist in eye care and surgical procedures",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dr-Mesbah-Uddin"
     },
     {
       name: "Ashit Dee",
       position: "Chief Ophthalmologist",
       category: "Operational Team",
       bio: "Expert ophthalmologist with advanced surgical expertise",
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ashit-Dee"
+    },
+    {
+      name: "Mustakima Akter",
+      position: "Eye Vision Expert",
+      category: "Operational Team",
+      bio: "Specialized eye vision expert with expertise in vision correction and eye health",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mustakima-Akter"
     },
     {
       name: "Ashrafuzzaman Munad",
       position: "Head of Finance & IT",
       category: "Operational Team",
       bio: "Financial management and technology infrastructure specialist",
-      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ashrafuzzaman-Munad"
     },
     {
       name: "Hamid Hussain Azad",
       position: "Marketing Executive",
       category: "Operational Team",
       bio: "Marketing and community engagement professional",
-      image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Hamid-Hussain-Azad"
     },
     {
       name: "Munni Islam",
       position: "Senior Nurse",
       category: "Operational Team",
       bio: "Experienced nursing professional with patient care expertise",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Munni-Islam"
     },
     {
       name: "Shuhel Shuvo",
       position: "Graduate Nurse",
       category: "Operational Team",
       bio: "Dedicated nursing graduate committed to quality patient care",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Shuhel-Shuvo"
     },
     {
       name: "Redwan Ahmed",
       position: "Office Assistant",
       category: "Operational Team",
       bio: "Dedicated office assistant supporting daily operations and patient services",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Redwan-Ahmed"
     }
   ];
 
