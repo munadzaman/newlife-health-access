@@ -14,7 +14,7 @@ const DoctorsSection = () => {
       availability: "Sunday: 3:00 PM - 5:00 PM",
       registration: "BMDC Registration: A 73262",
       affiliation: "National Institute of Ophthalmology & Hospital, Agargaon, Dhaka | Sylhet M.A.G. Osmani Medical College, Sylhet",
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Dr-M-Abdul-Basit-Raju&backgroundColor=9ca3af"
     },
     {
       name: "Dr. Masum Ahmed",
@@ -25,7 +25,7 @@ const DoctorsSection = () => {
       availability: "Wednesday - Thursday: 10:00 AM - 5:00 PM",
       registration: "BMDC Registration: A 106487",
       affiliation: "",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Dr-Masum-Ahmed&backgroundColor=9ca3af"
     },
     {
       name: "Mohammad Shohel Rana",
@@ -36,18 +36,18 @@ const DoctorsSection = () => {
       availability: "Daily: 9:00 AM - 5:00 PM",
       registration: "Reg. No.: 5973-FAHS (NITOR)",
       affiliation: "",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Mohammad-Shohel-Rana&backgroundColor=9ca3af"
     },
     {
-      name: "Mostak Ahmed Jibon",
-      designation: "Eye Vision Expert",
-      qualifications: "MLOP, MBICO - Mymensingh, DOLV - University of South Asia, EMO - Dhaka",
-      specializations: ["Eye Vision", "Optometry", "Vision Assessment"],
+      name: "Dr. Mesbah Uddin",
+      designation: "Chief Ophthalmologist",
+      qualifications: "MBBS, DO (Ophthalmology)",
+      specializations: ["Eye Surgery", "Vision Care", "Ophthalmology"],
       experience: "15+ years",
       availability: "Everyday: 9:00 AM - 5:00 PM",
-      registration: "Govt. Registration No: 503/670",
+      registration: "",
       affiliation: "",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Dr-Mesbah-Uddin&backgroundColor=9ca3af"
     },
     {
       name: "Asit Sutro Dhor",
@@ -58,7 +58,18 @@ const DoctorsSection = () => {
       availability: "Daily: 9:00 AM - 5:00 PM",
       registration: "BMDC Registration No: D 13933",
       affiliation: "",
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Asit-Sutro-Dhor&backgroundColor=9ca3af"
+    },
+    {
+      name: "Mustakima Akter",
+      designation: "Eye Vision Expert",
+      qualifications: "Specialized in Vision Correction & Eye Health",
+      specializations: ["Vision Correction", "Eye Health", "Optometry"],
+      experience: "8+ years",
+      availability: "Daily: 9:00 AM - 5:00 PM",
+      registration: "",
+      affiliation: "",
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Mustakima-Akter&backgroundColor=9ca3af"
     }
   ];
 

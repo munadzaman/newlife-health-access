@@ -12,7 +12,7 @@ const TeamSection = () => {
     position: "Chairman",
     category: "Leadership",
     bio: "UK-based experienced and celebrated optometrist with deep-seated roots in Bangladesh",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Syed-Tufayel-Rahman"
+    image: "https://api.dicebear.com/7.x/initials/svg?seed=Syed-Tufayel-Rahman&backgroundColor=9ca3af"
   };
 
   const founder = {
@@ -20,7 +20,7 @@ const TeamSection = () => {
     position: "Founder",
     category: "Leadership",
     bio: "Visionary founder with extensive business and management expertise",
-    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Akhtar-Uzzaman"
+    image: "https://api.dicebear.com/7.x/initials/svg?seed=Akhtar-Uzzaman&backgroundColor=9ca3af"
   };
 
   const directors = [
@@ -29,56 +29,56 @@ const TeamSection = () => {
       position: "Director",
       category: "Board of Directors",
       bio: "Strategic leadership and healthcare management expert",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Abu-Taher-Md-Bahar"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Abu-Taher-Md-Bahar&backgroundColor=9ca3af"
     },
     {
       name: "Dr Ali Ahmed Shuaib",
       position: "Director",
       category: "Board of Directors",
       bio: "Medical professional with extensive healthcare experience",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dr-Ali-Ahmed-Shuaib"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Dr-Ali-Ahmed-Shuaib&backgroundColor=9ca3af"
     },
     {
       name: "Abdul Hamid Mohon",
       position: "Director",
       category: "Board of Directors",
       bio: "Legal and business professional",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Abdul-Hamid-Mohon"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Abdul-Hamid-Mohon&backgroundColor=9ca3af"
     },
     {
       name: "Mifta Uddin Mizu",
       position: "Director",
       category: "Board of Directors",
       bio: "Business development and strategic planning expert",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mifta-Uddin-Mizu"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Mifta-Uddin-Mizu&backgroundColor=9ca3af"
     },
     {
       name: "Dr Jaed Rahman",
       position: "Director",
       category: "Board of Directors",
       bio: "Medical professional specializing in healthcare operations",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dr-Jaed-Rahman"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Dr-Jaed-Rahman&backgroundColor=9ca3af"
     },
     {
       name: "Ruhul Amin Tipu",
       position: "Director (US)",
       category: "Board of Directors",
       bio: "International operations and strategic partnerships",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ruhul-Amin-Tipu"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Ruhul-Amin-Tipu&backgroundColor=9ca3af"
     },
     {
       name: "Dewan Salman Sany",
       position: "Director",
       category: "Board of Directors",
       bio: "Business development and strategic planning expert",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dewan-Salman-Sany"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Dewan-Salman-Sany&backgroundColor=9ca3af"
     },
     {
       name: "Dr Ashraful Islam",
       position: "Director",
       category: "Board of Directors",
       bio: "Medical professional specializing in healthcare operations",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dr-Ashraful-Islam"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Dr-Ashraful-Islam&backgroundColor=9ca3af"
     }
   ];
 
@@ -88,63 +88,49 @@ const TeamSection = () => {
       position: "Head of Operations",
       category: "Operational Team",
       bio: "Energetic, hard-working and distinguished eye care professional leading our operations",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Shohel-Rana"
-    },
-    {
-      name: "Dr Mesbah Uddin",
-      position: "Chief Ophthalmologist",
-      category: "Operational Team",
-      bio: "Leading specialist in eye care and surgical procedures",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dr-Mesbah-Uddin"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Shohel-Rana&backgroundColor=9ca3af"
     },
     {
       name: "Ashit Dee",
       position: "Chief Ophthalmologist",
       category: "Operational Team",
       bio: "Expert ophthalmologist with advanced surgical expertise",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ashit-Dee"
-    },
-    {
-      name: "Mustakima Akter",
-      position: "Eye Vision Expert",
-      category: "Operational Team",
-      bio: "Specialized eye vision expert with expertise in vision correction and eye health",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mustakima-Akter"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Ashit-Dee&backgroundColor=9ca3af"
     },
     {
       name: "Ashrafuzzaman Munad",
       position: "Head of Finance & IT",
       category: "Operational Team",
       bio: "Financial management and technology infrastructure specialist",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Ashrafuzzaman-Munad"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Ashrafuzzaman-Munad&backgroundColor=9ca3af"
     },
     {
       name: "Hamid Hussain Azad",
       position: "Marketing Executive",
       category: "Operational Team",
       bio: "Marketing and community engagement professional",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Hamid-Hussain-Azad"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Hamid-Hussain-Azad&backgroundColor=9ca3af"
     },
     {
       name: "Munni Islam",
       position: "Senior Nurse",
       category: "Operational Team",
       bio: "Experienced nursing professional with patient care expertise",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Munni-Islam"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Munni-Islam&backgroundColor=9ca3af"
     },
     {
       name: "Shuhel Shuvo",
       position: "Graduate Nurse",
       category: "Operational Team",
       bio: "Dedicated nursing graduate committed to quality patient care",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Shuhel-Shuvo"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Shuhel-Shuvo&backgroundColor=9ca3af"
     },
     {
       name: "Redwan Ahmed",
       position: "Office Assistant",
       category: "Operational Team",
       bio: "Dedicated office assistant supporting daily operations and patient services",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Redwan-Ahmed"
+      image: "https://api.dicebear.com/7.x/initials/svg?seed=Redwan-Ahmed&backgroundColor=9ca3af"
     }
   ];
 
